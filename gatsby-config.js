@@ -1,8 +1,10 @@
+import theme from "./src/components/theme"
+
 module.exports = {
   siteMetadata: {
-    title: `Brendon Dulam`,
+    title: `Brendon`,
     description: `This is my web portfolio.`,
-    author: `@bldulam1`,
+    author: `Brendon Dulam`,
   },
   plugins: [
     `gatsby-theme-material-ui`,
@@ -22,8 +24,8 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: '#0A192F',
+        theme_color: theme.palette.primary.main,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
