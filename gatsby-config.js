@@ -1,5 +1,3 @@
-import theme from "./src/components/theme"
-
 module.exports = {
   siteMetadata: {
     title: `Brendon`,
@@ -24,8 +22,8 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: '#0A192F',
-        theme_color: theme.palette.primary.main,
+        background_color: "#0A192F",
+        theme_color: '#E83D87',
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },

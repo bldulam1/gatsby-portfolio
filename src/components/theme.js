@@ -7,9 +7,9 @@ export default createMuiTheme({
     background: {
       default: "#0A192F",
     },
-    common:{
-      black: '#0A192F',
-      white: '#A7969B'
+    common: {
+      black: "#0A192F",
+      white: "#A7969B",
     },
     primary: {
       main: "#E83D87",
