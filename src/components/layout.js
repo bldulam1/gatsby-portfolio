@@ -4,17 +4,26 @@ import { graphql, useStaticQuery } from "gatsby"
 import theme from "./theme"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import Hidden from "@material-ui/core/Hidden"
+import Link from "@material-ui/core/Link"
 import makeStyles from "@material-ui/core/styles/makeStyles"
 import ThemeProvider from "@material-ui/styles/ThemeProvider"
 import Box from "@material-ui/core/Box"
+import Header from "./header"
 
 const useStyles = makeStyles(theme => ({
   container: {
-    minHeight: '100%'
+    minHeight: "100%",
   },
   sideBar: {
-    minWidth: theme.spacing(10)
-  }
+    minWidth: theme.spacing(10),
+    writingMode: "vertical-rl",
+    textOrientation: "mixed",
+    fontFamily: "'Source Code Pro', monospace",
+  },
+  content: {
+    paddingLeft: theme.spacing(3),
+    paddingRight: theme.spacing(3),
+  },
 }))
 
 const Layout = ({ children }) => {
@@ -32,36 +41,25 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={theme}>
       <CssBaseline/>
       <Box display='flex' flexDirection='column' className={classes.container}>
-        <Box>Appbar</Box>
-        <Box display='flex' flexDirection='row' flexGrow={1} >
+        <Header/>
+        <Box display='flex' flexDirection='row' flexGrow={1} mx={3}>
           <Hidden smDown>
-            <Box className={classes.sideBar}>Left</Box>
+            <Box className={classes.sideBar}>
+
+            </Box>
           </Hidden>
           <Box flexGrow={1} display='flex' flexDirection='column' justifyContent='flex-start'>
             {children}
           </Box>
           <Hidden smDown>
-            <Box className={classes.sideBar}>Right</Box>
+            <Box className={classes.sideBar} m='auto'>
+              <Link href="mailto: brendondulam06@gmail.com" color="secondary">
+                brendondulam06@gmail.com
+              </Link>
+            </Box>
           </Hidden>
         </Box>
-        <Box>
-          Footer
-        </Box>
-        {/*<div className={classes.container}>*/}
-        {/*  <Hidden smDown>*/}
-        {/*    <aside>*/}
-        {/*      Left*/}
-        {/*    </aside>*/}
-        {/*  </Hidden>*/}
-        {/*  <main style={{ flexGrow: 1 }}>{children}</main>*/}
-        {/*  <Hidden smDown>*/}
-        {/*    <aside>brendon.dulam</aside>*/}
-        {/*  </Hidden>*/}
-        {/*</div>*/}
       </Box>
-      {/*<main>*/}
-      {/*  {children}*/}
-      {/*</main>*/}
     </ThemeProvider>
 
     // <>

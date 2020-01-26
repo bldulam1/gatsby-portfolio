@@ -9,12 +9,12 @@ export default createMuiTheme({
     },
     common: {
       black: "#0A192F",
-      white: "#A7969B",
+      white: "#fff",
     },
     primary: {
-      main: "#E83D87",
-      light: "#ff74b7",
-      dark: "#b1005a",
+      main: "#daa520",
+      light: "#ffd656",
+      dark: "#a47700",
     },
     secondary: {
       main: "#a7969b",
