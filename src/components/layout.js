@@ -8,7 +8,7 @@ import Link from "@material-ui/core/Link"
 import makeStyles from "@material-ui/core/styles/makeStyles"
 import ThemeProvider from "@material-ui/styles/ThemeProvider"
 import Box from "@material-ui/core/Box"
-import Header from "./header"
+import Header from "./header/header"
 
 const useStyles = makeStyles(theme => ({
   container: {
