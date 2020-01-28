@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline/>
-      <Box display='flex' flexDirection='column' className={classes.container}>
+      <Box display='flex' flexDirection='column' justifyContent='center' className={classes.container}>
         <Header/>
         <Box display='flex' flexDirection='row' flexGrow={1} mx={3}>
           <Hidden smDown>
@@ -48,7 +48,7 @@ const Layout = ({ children }) => {
 
             </Box>
           </Hidden>
-          <Box flexGrow={1} display='flex' flexDirection='column' justifyContent='flex-start'>
+          <Box flexGrow={1} display='flex' flexDirection='column' my='auto' justifyContent='flex-start'>
             {children}
           </Box>
           <Hidden smDown>
