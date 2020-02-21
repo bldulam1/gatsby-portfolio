@@ -1,14 +1,16 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { graphql, useStaticQuery } from "gatsby"
-import theme from "./theme"
+import { Container } from "@material-ui/core"
+import Box from "@material-ui/core/Box"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import Hidden from "@material-ui/core/Hidden"
 import Link from "@material-ui/core/Link"
 import makeStyles from "@material-ui/core/styles/makeStyles"
 import ThemeProvider from "@material-ui/styles/ThemeProvider"
-import Box from "@material-ui/core/Box"
+import { graphql, useStaticQuery } from "gatsby"
+import PropTypes from "prop-types"
+import React from "react"
+
 import Header from "./header/header"
+import theme, { fonts } from "./theme"
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -24,36 +26,56 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: theme.spacing(3),
     paddingRight: theme.spacing(3),
   },
+  email: {
+    fontFamily: fonts.secondary,
+    textDecoration: "none"
+  }
 }))
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-      query SiteTitleQuery {
-          site {
-              siteMetadata {
-                  title
-              }
-          }
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+        }
       }
+    }
   `)
+
   const classes = useStyles()
+
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline/>
-      <Box display='flex' flexDirection='column' justifyContent='center' className={classes.container}>
-        <Header/>
-        <Box display='flex' flexDirection='row' flexGrow={1} mx={3}>
+      <CssBaseline />
+      <Box
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        className={classes.container}
+      >
+        <Header />
+        <Box display="flex" flexDirection="row" flexGrow={1} mx={3}>
           <Hidden smDown>
-            <Box className={classes.sideBar}>
-
-            </Box>
+            <Box className={classes.sideBar}></Box>
           </Hidden>
-          <Box flexGrow={1} display='flex' flexDirection='column' my='auto' justifyContent='flex-start'>
-            {children}
+          <Box
+            flexGrow={1}
+            display="flex"
+            flexDirection="column"
+            my="auto"
+            justifyContent="flex-start"
+          >
+            <Container maxWidth="lg">{children}</Container>
           </Box>
           <Hidden smDown>
-            <Box className={classes.sideBar} m='auto'>
-              <Link href="mailto: brendondulam06@gmail.com" color="secondary">
+            <Box className={classes.sideBar} m="auto">
+              <Link
+                href="mailto: brendondulam06@gmail.com"
+                color="secondary"
+                variant="h6"
+                className={classes.email}
+              >
                 brendondulam06@gmail.com
               </Link>
             </Box>
@@ -61,17 +83,6 @@ const Layout = ({ children }) => {
         </Box>
       </Box>
     </ThemeProvider>
-
-    // <>
-    //   <Header siteTitle={data.site.siteMetadata.title}/>
-    //   <div className={classes.headerSpace}>
-    //     <main>{children}</main>
-    //     <footer>
-    //       © {new Date().getFullYear()}, Built with {` `}
-    //       <a href="https://www.gatsbyjs.org">Gatsby</a>
-    //     </footer>
-    //   </div>
-    // </>
   )
 }
 
