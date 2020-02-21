@@ -41,7 +41,7 @@ const useStyles = makeStyles(theme => ({
 
 function MenuContents(params) {
   const classes = useStyles()
-  const { isMobile } = params
+  const { isDesktop } = params
   const components = {
     about: "/",
     experience: "/experience",
@@ -49,7 +49,7 @@ function MenuContents(params) {
     contact: "/contact",
   }
 
-  return isMobile ? (
+  return isDesktop ? (
     <Box display="flex" flexDirection="row">
       {Object.keys(components).map(component => (
         <Typography>
@@ -58,6 +58,7 @@ function MenuContents(params) {
             className={classes.link}
             href={components[component]}
             style={{ marginRight: "3vw" }}
+            variant="h6"
           >
             {component}
           </Link>
@@ -85,7 +86,7 @@ function MenuContents(params) {
 
 export default function() {
   const theme = useTheme()
-  const isMobile = !useMediaQuery(theme.breakpoints.down("sm"))
+  const isDesktop = !useMediaQuery(theme.breakpoints.down("sm"))
 
   const [state, setState] = useState({
     isDrawerOpen: false,
@@ -97,8 +98,8 @@ export default function() {
     setState({ isDrawerOpen: !isDrawerOpen })
   }
 
-  return isMobile ? (
-    <MenuContents isMobile={isMobile} />
+  return isDesktop ? (
+    <MenuContents isDesktop={isDesktop} />
   ) : (
     <IconButton onClick={toggleDrawer}>
       <MenuIcon />
@@ -108,7 +109,7 @@ export default function() {
         onOpen={toggleDrawer}
         open={isDrawerOpen}
       >
-        <MenuContents isMobile={isMobile} />
+        <MenuContents isDesktop={isDesktop} />
       </SwipeableDrawer>
     </IconButton>
   )

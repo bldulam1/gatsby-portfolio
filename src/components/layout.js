@@ -1,5 +1,5 @@
-import { Container } from "@material-ui/core"
 import Box from "@material-ui/core/Box"
+import Container from "@material-ui/core/Container"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import Hidden from "@material-ui/core/Hidden"
 import Link from "@material-ui/core/Link"
@@ -28,8 +28,8 @@ const useStyles = makeStyles(theme => ({
   },
   email: {
     fontFamily: fonts.secondary,
-    textDecoration: "none"
-  }
+    textDecoration: "none",
+  },
 }))
 
 const Layout = ({ children }) => {
@@ -42,6 +42,7 @@ const Layout = ({ children }) => {
       }
     }
   `)
+  const email = "brendondulam06@gmail.com"
 
   const classes = useStyles()
 
@@ -71,12 +72,12 @@ const Layout = ({ children }) => {
           <Hidden smDown>
             <Box className={classes.sideBar} m="auto">
               <Link
-                href="mailto: brendondulam06@gmail.com"
+                href={`mailto: ${email}`}
                 color="secondary"
                 variant="h6"
                 className={classes.email}
               >
-                brendondulam06@gmail.com
+                {email}
               </Link>
             </Box>
           </Hidden>

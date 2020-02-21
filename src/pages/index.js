@@ -19,7 +19,7 @@ const useStyle = makeStyles(theme => ({
 const IndexPage = () => {
   const classes = useStyle()
   const theme = useTheme()
-  const isMobile = !useMediaQuery(theme.breakpoints.down("sm"))
+  const isDesktop = !useMediaQuery(theme.breakpoints.down("sm"))
 
   return (
     <Layout>
@@ -28,25 +28,25 @@ const IndexPage = () => {
         <Typography
           color="primary"
           className={classes.greetings}
-          variant={isMobile ? "h5" : "p"}
+          variant={isDesktop ? "h5" : "p"}
         >
           Hi, my name is
         </Typography>
         <Typography
           fontWeight="fontWeightBold"
-          variant={isMobile ? "h1" : "h2"}
+          variant={isDesktop ? "h1" : "h2"}
         >
           <Box fontWeight="fontWeightBold">Brendon Dulam</Box>
         </Typography>
-        <Typography color="secondary" variant={isMobile ? "h1" : "h2"}>
+        <Typography color="secondary" variant={isDesktop ? "h1" : "h2"}>
           I build web applications
         </Typography>
         <br />
         <br />
-        <Typography color="secondary" variant={isMobile ? "h5" : "p"}>
+        <Typography color="secondary" variant={isDesktop ? "h5" : "p"}>
           I'm a software engineer based in Yokohama, Japan specializing in
           building (and occasionally designing) exceptional, high-quality
-          websites and applications.
+          web applications.
         </Typography>
 
         <br />
