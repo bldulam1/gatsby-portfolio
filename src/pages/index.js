@@ -1,6 +1,8 @@
 import Box from "@material-ui/core/Box"
 import makeStyles from "@material-ui/core/styles/makeStyles"
 import Typography from "@material-ui/core/Typography"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
+import useTheme from "@material-ui/styles/useTheme"
 import Button from "gatsby-theme-material-ui/src/components/button"
 import React from "react"
 
@@ -16,23 +18,32 @@ const useStyle = makeStyles(theme => ({
 
 const IndexPage = () => {
   const classes = useStyle()
+  const theme = useTheme()
+  const isMobile = !useMediaQuery(theme.breakpoints.down("sm"))
 
   return (
     <Layout>
       <SEO title="Home" />
       <Box>
-        <Typography color="primary" className={classes.greetings} variant="h5">
+        <Typography
+          color="primary"
+          className={classes.greetings}
+          variant={isMobile ? "h5" : "p"}
+        >
           Hi, my name is
         </Typography>
-        <Typography variant="h1" fontWeight="fontWeightBold">
+        <Typography
+          fontWeight="fontWeightBold"
+          variant={isMobile ? "h1" : "h2"}
+        >
           <Box fontWeight="fontWeightBold">Brendon Dulam</Box>
         </Typography>
-        <Typography variant="h1" color="secondary">
+        <Typography color="secondary" variant={isMobile ? "h1" : "h2"}>
           I build web applications
         </Typography>
         <br />
         <br />
-        <Typography color="secondary" variant="h5">
+        <Typography color="secondary" variant={isMobile ? "h5" : "p"}>
           I'm a software engineer based in Yokohama, Japan specializing in
           building (and occasionally designing) exceptional, high-quality
           websites and applications.
