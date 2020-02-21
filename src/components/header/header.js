@@ -41,7 +41,7 @@ const Header = ({ siteTitle }) => {
         <Toolbar className={classes.toolbar}>
           <Link href="/">
             <svg
-              width="2.5rem"
+              width="3rem"
               viewBox="0 0 1885.6 2314.5"
               xmlns="http://www.w3.org/2000/svg"
             >

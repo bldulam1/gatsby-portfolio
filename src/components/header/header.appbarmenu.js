@@ -24,11 +24,10 @@ const useStyles = makeStyles(theme => ({
     textTransform: "uppercase",
     marginTop: theme.spacing(2),
     marginLeft: "auto",
-    marginRight: "auto",
+    marginRight: "3vw",
     fontFamily: fonts.secondary,
     "&:hover": {
       color: theme.palette.primary.light,
-      textDecoration: "none",
     },
   },
   drawer: {
@@ -39,9 +38,8 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-function MenuContents(params) {
+function MenuContents({ isDesktop }) {
   const classes = useStyles()
-  const { isDesktop } = params
   const components = {
     about: "/",
     experience: "/experience",
@@ -57,8 +55,8 @@ function MenuContents(params) {
             key={`link_${component}`}
             className={classes.link}
             href={components[component]}
-            style={{ marginRight: "3vw" }}
             variant="h6"
+            underline="none"
           >
             {component}
           </Link>

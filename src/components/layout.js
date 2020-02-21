@@ -55,7 +55,7 @@ const Layout = ({ children }) => {
         justifyContent="center"
         className={classes.container}
       >
-        <Header />
+        <Header siteTitle="Test"/>
         <Box display="flex" flexDirection="row" flexGrow={1} mx={3}>
           <Hidden smDown>
             <Box className={classes.sideBar}></Box>

@@ -45,14 +45,19 @@ const IndexPage = () => {
         <br />
         <Typography color="secondary" variant={isDesktop ? "h5" : "p"}>
           I'm a software engineer based in Yokohama, Japan specializing in
-          building (and occasionally designing) exceptional, high-quality
-          web applications.
+          building (and occasionally designing) exceptional, high-quality web
+          applications.
         </Typography>
 
         <br />
         <br />
         <div>
-          <Button variant="outlined" color="primary" size="large">
+          <Button
+            variant="outlined"
+            color="primary"
+            size="large"
+            href={`mailto: brendondulam06@gmail.com`}
+          >
             Get In Touch
           </Button>
         </div>
