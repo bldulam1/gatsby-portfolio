@@ -25,36 +25,43 @@ const Work = params => {
 
   return (
     <Box>
-      <Typography variant="h6">{`${startDate.month}/${startDate.year} to ${endDate.month}/${endDate.year}`}</Typography>
-      <Typography variant="h5">
-        {position}, {company}
-      </Typography>
-      <Typography variant="body">{summary}</Typography>
-      <br />
-      <ul>
-        {bullets &&
-          bullets.length &&
-          bullets.map(bullet => (
-            <li>
-              <Typography>{bullet}</Typography>
-            </li>
-          ))}
-      </ul>
-      {projects &&
-        projects.length &&
-        projects.map(({ name, date, bullet }) => {
-          const pStartDate = getYearAndMonth(date.start)
-          const pEndDate = getYearAndMonth(date.end)
+      <Box>
+        <Typography variant="h6">{`${startDate.month}/${startDate.year} to ${endDate.month}/${endDate.year}`}</Typography>
+        <Typography variant="h5" color="primary">
+          {position}, {company}
+        </Typography>
+        <Typography variant="body">{summary}</Typography>
+      </Box>
+      <Box paddingTop="1.5rem">
+        {bullets && bullets.length && <Bullets bullets={bullets} />}
+        {projects &&
+          projects.length &&
+          projects.map(({ name, date, bullets }) => {
+            const pStartDate = getYearAndMonth(date.start)
+            const pEndDate = getYearAndMonth(date.end)
 
-          return (
-            <div>
-              <Typography variant="body2">{name}</Typography>
-              <Typography variant="h6">{`${pStartDate.month}/${pStartDate.year} to ${pEndDate.month}/${pEndDate.year}`}</Typography>
-              <Typography variant="body">{summary}</Typography>
-            </div>
-          )
-        })}
+            return (
+              <div>
+                <Typography variant="h6" color="secondary">{name}</Typography>
+                <Typography variant="body2">{`${pStartDate.month}/${pStartDate.year} to ${pEndDate.month}/${pEndDate.year}`}</Typography>
+                <Bullets bullets={bullets} />
+              </div>
+            )
+          })}
+      </Box>
     </Box>
+  )
+}
+
+function Bullets({ bullets }) {
+  return (
+    <ul>
+      {bullets.map(bullet => (
+        <li>
+          <Typography>{bullet}</Typography>
+        </li>
+      ))}
+    </ul>
   )
 }
 
@@ -65,7 +72,7 @@ const Work = params => {
 //   position: PropTypes.string,
 //   company: PropTypes.string,
 //   summary: PropTypes.string,
-// }
+// }x
 
 // Work.defaultProps = {
 //   date: null,
