@@ -1,6 +1,6 @@
 import Box from "@material-ui/core/Box"
 import IconButton from "@material-ui/core/IconButton"
-import Link from "@material-ui/core/Link"
+import { Link } from "gatsby"
 import makeStyles from "@material-ui/core/styles/makeStyles"
 import useTheme from "@material-ui/core/styles/useTheme"
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
@@ -22,10 +22,12 @@ const useStyles = makeStyles(theme => ({
   },
   link: {
     textTransform: "uppercase",
+    textDecoration: "none",
     marginTop: theme.spacing(2),
     marginLeft: "auto",
     marginRight: "3vw",
     fontFamily: fonts.secondary,
+    color: theme.palette.primary.dark,
     "&:hover": {
       color: theme.palette.primary.light,
     },
@@ -43,24 +45,20 @@ function MenuContents({ isDesktop }) {
   const components = {
     about: "/",
     experience: "/experience",
-    work: "/work",
+    works: "/works",
     contact: "/contact",
   }
 
   return isDesktop ? (
     <Box display="flex" flexDirection="row">
       {Object.keys(components).map(component => (
-        <Typography>
-          <Link
-            key={`link_${component}`}
-            className={classes.link}
-            href={components[component]}
-            variant="h6"
-            underline="none"
-          >
-            {component}
-          </Link>
-        </Typography>
+        <Link
+          key={`link_${component}`}
+          className={classes.link}
+          to={components[component]}
+        >
+          <Typography>{component}</Typography>
+        </Link>
       ))}
       <Button variant="contained" size="medium" color="primary">
         Resume
