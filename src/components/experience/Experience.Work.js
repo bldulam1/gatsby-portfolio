@@ -32,7 +32,7 @@ const Work = params => {
         </Typography>
         <Typography variant="body">{summary}</Typography>
       </Box>
-      <Box paddingTop="1.5rem">
+      <Box marginTop="1.5rem" marginLeft="1.5rem">
         {bullets && bullets.length && <Bullets bullets={bullets} />}
         {projects &&
           projects.length &&
