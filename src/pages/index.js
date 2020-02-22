@@ -28,7 +28,7 @@ const IndexPage = () => {
         <Typography
           color="primary"
           className={classes.greetings}
-          variant={isDesktop ? "h5" : "p"}
+          variant={isDesktop ? "h5" : "h6"}
         >
           Hi, my name is
         </Typography>
@@ -43,7 +43,7 @@ const IndexPage = () => {
         </Typography>
         <br />
         <br />
-        <Typography color="secondary" variant={isDesktop ? "h5" : "p"}>
+        <Typography color="secondary" variant={isDesktop ? "h5" : "h6"}>
           I'm a software engineer based in Yokohama, Japan specializing in
           building (and occasionally designing) exceptional, high-quality web
           applications.
