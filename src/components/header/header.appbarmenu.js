@@ -62,7 +62,7 @@ function MenuContents({ isDesktop }) {
           </Link>
         </Typography>
       ))}
-      <Button variant="contained" size="small" color="primary">
+      <Button variant="contained" size="medium" color="primary">
         Resume
       </Button>
     </Box>
