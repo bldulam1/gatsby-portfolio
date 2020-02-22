@@ -7,7 +7,7 @@ import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
 import Typography from "@material-ui/core/Typography"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import MenuIcon from "@material-ui/icons/Menu"
-import Button from "gatsby-theme-material-ui/src/components/button"
+import Button from "@material-ui/core/Button"
 import React, { useState } from "react"
 
 import { fonts } from "../theme"
