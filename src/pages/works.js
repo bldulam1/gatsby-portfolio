@@ -1,14 +1,16 @@
 import React from "react"
 import Layout from "../components/layout"
-// import Image from "../components/image"
 import SEO from "../components/seo"
-// import { Link } from "gatsby"
+import Box from "@material-ui/core/Box"
+import Maps from "../components/works/streetscape/Maps"
 
 export default function about() {
   return (
     <Layout>
-      <SEO title="Works" />
-      Works
+      <SEO title="Works"/>
+      <Box height="80vh">
+        <Maps/>
+      </Box>
     </Layout>
   )
 }
