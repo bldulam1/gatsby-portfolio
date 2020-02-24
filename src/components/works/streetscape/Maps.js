@@ -14,7 +14,6 @@ import {
 import { Form } from "@streetscape.gl/monochrome"
 
 import { APP_SETTINGS, CAR, MAP_STYLE, MAPBOX_TOKEN, XVIZ_CONFIG, XVIZ_STYLE } from "./constants"
-
 setXVIZConfig(XVIZ_CONFIG)
 
 const TIMEFORMAT_SCALE =
