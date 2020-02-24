@@ -1,8 +1,7 @@
 import { CarMesh } from "streetscape.gl";
 
-export const MAPBOX_TOKEN = "pk.eyJ1IjoiYmxkdWxhbTEiLCJhIjoiY2p5YncwdHV2MGNuaDNjcW1mYnpxcnF5MiJ9._XwVCfgZCvePQBCvb-BUVA";
-
-export const MAP_STYLE = "mapbox://styles/mapbox/light-v9";
+export const MAPBOX_TOKEN = process.env.MAPBOX_TOKEN;
+export const MAP_STYLE = "mapbox://styles/mapbox/dark-v10";
 
 export const XVIZ_CONFIG = {
   PLAYBACK_FRAME_RATE: 10
