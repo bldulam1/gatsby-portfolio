@@ -1,0 +1,30 @@
+version: 2.1
+executors:
+  node-executor:
+    docker:
+      - image: circleci/node:10
+
+commands:
+  gatsby-build:
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependencies
+          command: yarn install && npm rebuild
+      - save_cache:
+          key: yarn-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+      - restore_cache:
+          keys:
+            - gatsby-public-cache-{{ .Branch }}
+      - run:
+          name: Gatsby Build
+          command: GATSBY_CPU_COUNT=2 yarn build
+      - save_cache:
+          key: gatsby-public-cache-{{ .Branch }}
+          paths:
+            - ./public

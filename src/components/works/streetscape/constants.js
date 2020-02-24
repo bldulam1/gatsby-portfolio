@@ -1,6 +1,6 @@
 import { CarMesh } from "streetscape.gl";
 
-export const MAPBOX_TOKEN = process.env.MAPBOX_TOKEN;
+export const {MAPBOX_TOKEN} = process.env;
 export const MAP_STYLE = "mapbox://styles/mapbox/dark-v10";
 export const XVIZ_CONFIG = {
   PLAYBACK_FRAME_RATE: 20
