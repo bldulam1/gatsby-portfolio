@@ -60,7 +60,6 @@ class StreetScapeGL extends PureComponent {
             <div id="camera-view">
               <XVIZPanel log={log} name="Camera" />
             </div>
-            {/* <Hud log={log} /> */}
           </div>
           <TimeLineView log={log} />
         </div>
