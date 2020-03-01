@@ -8,10 +8,10 @@
 }
 
 #control-panel {
+    position: relative;
     box-sizing: border-box;
     width: 320px;
     padding: 12px;
-    position: relative;
     z-index: 1;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     height: 100%;
@@ -37,7 +37,6 @@
 }
 
 #timeline {
-    padding: 24px 0;
     position: relative;
 }
 
