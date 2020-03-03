@@ -1,0 +1,51 @@
+#App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.Column {
+  display: flex;
+  flex-direction: column;
+}
+
+.Row {
+  display: flex;
+  flex-direction: row;
+}
+
+.Box {
+  border: 1px black solid;
+  height: 1rem;
+  width: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Start {
+  background-color: green;
+}
+
+.Target {
+  background-color: red;
+}
+
+.Block {
+  background-color: black;
+}
+
+.Open {
+  background-color: chartreuse;
+}
+
+.Closed {
+  background-color: orange;
+}
+
+.Head {
+  background-color: darkblue;
+}
