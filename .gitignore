@@ -69,3 +69,5 @@ yarn-error.log
 .yarn-integrity
 
 /assets/inkscape
+
+package-lock.json
