@@ -25,9 +25,9 @@ export default function() {
       <SEO title="Experience" />
       <Box>
         <Typography variant="h4">Work Experience</Typography>
-        {experience.experiences.map(exp => {
-          return <Work experience={exp} />
-        })}
+        {experience.experiences.map((exp, index) => (
+          <Work key={`experience-${index}`} experience={exp} />
+        ))}
       </Box>
     </Layout>
   )
