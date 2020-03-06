@@ -5,10 +5,10 @@ import useMediaQuery from "@material-ui/core/useMediaQuery"
 import useTheme from "@material-ui/styles/useTheme"
 import Button from "gatsby-theme-material-ui/src/components/button"
 import React from "react"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { fonts } from "../components/theme"
-
 
 const useStyle = makeStyles(theme => ({
   greetings: {
@@ -46,7 +46,7 @@ const IndexPage = () => {
         <Typography color="secondary" variant={isDesktop ? "h5" : "h6"}>
           I'm a software engineer based in Yokohama, Japan specializing in
           building (and occasionally designing) exceptional, high-quality web
-          applications.
+          applications. I specialize in NodeJS, Python, GO, React, MongoDB, and Serverless (AWS, Netlify, GCP) stack.
         </Typography>
 
         <br />
