@@ -1,15 +1,16 @@
 import Box from "@material-ui/core/Box"
+import Button from "@material-ui/core/Button"
 import IconButton from "@material-ui/core/IconButton"
-import { Link } from "gatsby"
 import makeStyles from "@material-ui/core/styles/makeStyles"
 import useTheme from "@material-ui/core/styles/useTheme"
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
 import Typography from "@material-ui/core/Typography"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import MenuIcon from "@material-ui/icons/Menu"
-import Button from "@material-ui/core/Button"
+import { Link } from "gatsby"
 import React, { useState } from "react"
 
+import cvFile from "../../../assets/CV_Brendon.pdf"
 import { fonts } from "../theme"
 
 const useStyles = makeStyles(theme => ({
@@ -40,6 +41,14 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+const ResumeButton = () => (
+  <a style={{ textDecoration: "none" }} href={cvFile}>
+    <Button variant="contained" size="medium" color="primary">
+      Resume
+    </Button>
+  </a>
+)
+
 function MenuContents({ isDesktop }) {
   const classes = useStyles()
   const components = {
@@ -60,9 +69,7 @@ function MenuContents({ isDesktop }) {
           <Typography>{component}</Typography>
         </Link>
       ))}
-      <Button variant="contained" size="medium" color="primary">
-        Resume
-      </Button>
+      <ResumeButton />
     </Box>
   ) : (
     <Box role="presentation" className={classes.drawer}>
@@ -71,11 +78,7 @@ function MenuContents({ isDesktop }) {
           <Link href={components[component]}>{component}</Link>
         </Typography>
       ))}
-      <Box display="flex" justifyContent="center" mt="20vh">
-        <Button variant="contained" size="small" color="primary">
-          Resume
-        </Button>
-      </Box>
+      <ResumeButton />
     </Box>
   )
 }

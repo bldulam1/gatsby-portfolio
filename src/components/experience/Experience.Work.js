@@ -30,19 +30,21 @@ const Work = params => {
         <Typography variant="h5" color="primary">
           {position}, {company}
         </Typography>
-        <Typography variant="body">{summary}</Typography>
+        <Typography variant="body1">{summary}</Typography>
       </Box>
       <Box marginTop="1.5rem" marginLeft="1.5rem">
         {bullets && bullets.length && <Bullets bullets={bullets} />}
         {projects &&
           projects.length &&
-          projects.map(({ name, date, bullets }) => {
+          projects.map(({ name, date, bullets }, index) => {
             const pStartDate = getYearAndMonth(date.start)
             const pEndDate = getYearAndMonth(date.end)
 
             return (
-              <div>
-                <Typography variant="h6" color="secondary">{name}</Typography>
+              <div key={`project-${index}`}>
+                <Typography variant="h6" color="secondary">
+                  {name}
+                </Typography>
                 <Typography variant="body2">{`${pStartDate.month}/${pStartDate.year} to ${pEndDate.month}/${pEndDate.year}`}</Typography>
                 <Bullets bullets={bullets} />
               </div>
@@ -56,8 +58,8 @@ const Work = params => {
 function Bullets({ bullets }) {
   return (
     <ul>
-      {bullets.map(bullet => (
-        <li>
+      {bullets.map((bullet, index) => (
+        <li key={`work-bullet-${index}`}>
           <Typography>{bullet}</Typography>
         </li>
       ))}
