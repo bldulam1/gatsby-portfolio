@@ -1,14 +1,13 @@
 import Box from "@material-ui/core/Box"
-import makeStyles from "@material-ui/core/styles/makeStyles"
+import Button from "gatsby-theme-material-ui/src/components/button"
+import Layout from "../components/layout"
+import React from "react"
+import SEO from "../components/seo"
 import Typography from "@material-ui/core/Typography"
+import { fonts } from "../components/theme"
+import makeStyles from "@material-ui/core/styles/makeStyles"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import useTheme from "@material-ui/styles/useTheme"
-import Button from "gatsby-theme-material-ui/src/components/button"
-import React from "react"
-
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { fonts } from "../components/theme"
 
 const useStyle = makeStyles(theme => ({
   greetings: {
@@ -28,22 +27,22 @@ const IndexPage = () => {
         <Typography
           color="primary"
           className={classes.greetings}
-          variant={isDesktop ? "h5" : "h6"}
+          variant="h5"
         >
           Hi, my name is
         </Typography>
         <Typography
           fontWeight="fontWeightBold"
-          variant={isDesktop ? "h1" : "h2"}
+          variant="h2"
         >
           <Box fontWeight="fontWeightBold">Brendon Dulam</Box>
         </Typography>
-        <Typography color="secondary" variant={isDesktop ? "h1" : "h2"}>
+        <Typography color="secondary" variant="h2">
           I build web applications
         </Typography>
         <br />
         <br />
-        <Typography color="secondary" variant={isDesktop ? "h5" : "h6"}>
+        <Typography color="secondary" variant="h5">
           I'm a software engineer based in Yokohama, Japan specializing in
           building (and occasionally designing) exceptional, high-quality web
           applications. I specialize in NodeJS, Python, GO, React, MongoDB, and Serverless (AWS, Netlify, GCP) stack.
