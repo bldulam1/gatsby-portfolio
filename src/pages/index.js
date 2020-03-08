@@ -45,7 +45,7 @@ const IndexPage = () => {
         <Typography color="secondary" variant="h5">
           I'm a software engineer based in Yokohama, Japan specializing in
           building (and occasionally designing) exceptional, high-quality web
-          applications. I specialize in NodeJS, Python, GO, React, MongoDB, and Serverless (AWS, Netlify, GCP) stack.
+          applications. I specialize in NodeJS, Python, GO, React, MongoDB, and Serverless (AWS, Netlify) stack.
         </Typography>
 
         <br />
