@@ -23,6 +23,3 @@ export default createMuiTheme({
   },
 })
 
-export const fonts = {
-  secondary: "'Source Code Pro', monospace",
-}

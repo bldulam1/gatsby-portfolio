@@ -1,31 +1,28 @@
-import { library } from "@fortawesome/fontawesome-svg-core"
-import { fab } from "@fortawesome/free-brands-svg-icons"
-import { faCheckSquare, faCoffee } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Box from "@material-ui/core/Box"
-import Typography from "@material-ui/core/Typography"
-import useMediaQuery from "@material-ui/core/useMediaQuery"
-import makeStyles from "@material-ui/styles/makeStyles"
-import useTheme from "@material-ui/styles/useTheme"
-import React from "react"
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Layout from "../components/layout"
+import React from "react"
 import SEO from "../components/seo"
-import { fonts } from "../components/theme"
+import Typography from "@material-ui/core/Typography"
+import { fab } from "@fortawesome/free-brands-svg-icons"
+import fonts from "../gatsby-theme-material-ui-top-layout/fonts"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { makeStyles } from "@material-ui/core"
+import theme from "../gatsby-theme-material-ui-top-layout/theme"
 
-library.add(fab, faCheckSquare, faCoffee)
+library.add(fab)
 
-const useStyle = makeStyles(theme => ({
+const useStyle = makeStyles(() => ({
   mb2: {
     marginBottom: "2rem",
     maxWidth: "40rem",
   },
   icon: {
     margin: "2rem",
-    color: '#a7969b',
-    '&:hover': {
-      color: '#daa520',
-    }
+    color: theme.palette.secondary.light,
+    "&:hover": {
+      color: theme.palette.primary.light,
+    },
   },
   greetings: {
     fontFamily: fonts.secondary,
@@ -34,8 +31,6 @@ const useStyle = makeStyles(theme => ({
 
 const IndexPage = () => {
   const classes = useStyle()
-  const theme = useTheme()
-  const isDesktop = !useMediaQuery(theme.breakpoints.down("sm"))
 
   return (
     <Layout>
@@ -46,18 +41,14 @@ const IndexPage = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Typography
-          color="primary"
-          className={classes.greetings}
-          variant={isDesktop ? "h5" : "h6"}
-        >
+        <Typography color="primary" className={classes.greetings} variant="h6">
           What's Next?
         </Typography>
         <Typography variant="h3" className={classes.mb2}>
           Get In Touch
         </Typography>
         <Typography
-          variant="h6"
+          variant="body1"
           className={classes.mb2}
           align="center"
           color="secondary"

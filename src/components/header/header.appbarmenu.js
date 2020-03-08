@@ -1,17 +1,17 @@
+import React, { useState } from "react"
+
 import Box from "@material-ui/core/Box"
 import Button from "@material-ui/core/Button"
 import IconButton from "@material-ui/core/IconButton"
-import makeStyles from "@material-ui/core/styles/makeStyles"
-import useTheme from "@material-ui/core/styles/useTheme"
+import { Link } from "gatsby"
+import MenuIcon from "@material-ui/icons/Menu"
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
 import Typography from "@material-ui/core/Typography"
-import useMediaQuery from "@material-ui/core/useMediaQuery"
-import MenuIcon from "@material-ui/icons/Menu"
-import { Link } from "gatsby"
-import React, { useState } from "react"
-
 import cvFile from "../../../assets/CV_Brendon.pdf"
-import { fonts } from "../theme"
+import fonts from "../../gatsby-theme-material-ui-top-layout/fonts"
+import makeStyles from "@material-ui/core/styles/makeStyles"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
+import useTheme from "@material-ui/core/styles/useTheme"
 
 const useStyles = makeStyles(theme => ({
   headerEmptySpace: {

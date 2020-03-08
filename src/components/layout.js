@@ -1,16 +1,17 @@
+import { graphql, useStaticQuery } from "gatsby"
+
 import Box from "@material-ui/core/Box"
 import Container from "@material-ui/core/Container"
 import CssBaseline from "@material-ui/core/CssBaseline"
+import Header from "./header/header"
 import Hidden from "@material-ui/core/Hidden"
 import Link from "@material-ui/core/Link"
-import makeStyles from "@material-ui/core/styles/makeStyles"
-import ThemeProvider from "@material-ui/styles/ThemeProvider"
-import { graphql, useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-
-import Header from "./header/header"
-import theme, { fonts } from "./theme"
+import ThemeProvider from "@material-ui/styles/ThemeProvider"
+import fonts from "../gatsby-theme-material-ui-top-layout/fonts"
+import makeStyles from "@material-ui/core/styles/makeStyles"
+import theme from "../gatsby-theme-material-ui-top-layout/theme"
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -55,7 +56,7 @@ const Layout = ({ children }) => {
         justifyContent="center"
         className={classes.container}
       >
-        <Header siteTitle="Test"/>
+        <Header siteTitle="Test" />
         <Box display="flex" flexDirection="row" flexGrow={1} mx={3}>
           <Hidden smDown>
             <Box className={classes.sideBar}></Box>
