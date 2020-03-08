@@ -27,7 +27,7 @@ const IndexPage = () => {
         <Typography
           color="primary"
           className={classes.greetings}
-          variant="h5"
+          variant="h6"
         >
           Hi, my name is
         </Typography>
@@ -42,7 +42,7 @@ const IndexPage = () => {
         </Typography>
         <br />
         <br />
-        <Typography color="secondary" variant="h5">
+        <Typography color="secondary" variant="h6">
           I'm a software engineer based in Yokohama, Japan specializing in
           building (and occasionally designing) exceptional, high-quality web
           applications. I specialize in NodeJS, Python, GO, React, MongoDB, and Serverless (AWS, Netlify) stack.

@@ -1,16 +1,14 @@
-import React from "react"
-import { Link } from "gatsby"
-
+import Button from "@material-ui/core/Button"
+import Carousel from "react-material-ui-carousel"
 import Layout from "../components/layout"
+import { Link } from "gatsby"
+import Paper from "@material-ui/core/Paper"
+import React from "react"
 import SEO from "../components/seo"
 
-const SecondPage = () => (
+export default () => (
   <Layout>
     <SEO title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <Paper>Hello</Paper>
   </Layout>
 )
-
-export default SecondPage
