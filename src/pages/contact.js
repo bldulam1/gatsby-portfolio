@@ -61,7 +61,7 @@ const IndexPage = () => {
           color="secondary"
         >
           Whether for a potential project, or just to say hi, please feel free
-          to contact me with any of the links below.
+          to contact me through any of the links below.
         </Typography>
 
         <div className={classes.iconsContainer}>
