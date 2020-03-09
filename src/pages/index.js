@@ -1,11 +1,12 @@
 import Box from "@material-ui/core/Box"
-import Button from "gatsby-theme-material-ui/src/components/button"
-import Layout from "../components/layout"
-import React from "react"
-import SEO from "../components/seo"
-import Typography from "@material-ui/core/Typography"
-import fonts from "../gatsby-theme-material-ui-top-layout/fonts"
 import makeStyles from "@material-ui/core/styles/makeStyles"
+import Typography from "@material-ui/core/Typography"
+import Button from "gatsby-theme-material-ui/src/components/button"
+import React from "react"
+
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import fonts from "../gatsby-theme-material-ui-top-layout/fonts"
 
 const useStyle = makeStyles(theme => ({
   greetings: {
@@ -19,7 +20,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Box maxWidth="40rem">
+      <Box maxWidth="50rem">
         <Typography color="primary" className={classes.greetings} variant="h6">
           Hi, my name is
         </Typography>
@@ -27,9 +28,8 @@ const IndexPage = () => {
           <Box fontWeight="fontWeightBold">Brendon Dulam</Box>
         </Typography>
         <Typography color="secondary" variant="h2">
-          I build web applications
+          Web Developer
         </Typography>
-
         <br />
         <br />
         <Typography variant="body1">
