@@ -1,13 +1,14 @@
-import Box from "@material-ui/core/Box"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Layout from "../components/layout"
-import React from "react"
-import SEO from "../components/seo"
-import Typography from "@material-ui/core/Typography"
-import { fab } from "@fortawesome/free-brands-svg-icons"
-import fonts from "../gatsby-theme-material-ui-top-layout/fonts"
 import { library } from "@fortawesome/fontawesome-svg-core"
+import { fab } from "@fortawesome/free-brands-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { makeStyles } from "@material-ui/core"
+import Box from "@material-ui/core/Box"
+import Typography from "@material-ui/core/Typography"
+import React from "react"
+
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import fonts from "../gatsby-theme-material-ui-top-layout/fonts"
 import theme from "../gatsby-theme-material-ui-top-layout/theme"
 
 library.add(fab)
@@ -17,8 +18,14 @@ const useStyle = makeStyles(() => ({
     marginBottom: "2rem",
     maxWidth: "40rem",
   },
+  iconsContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "100%",
+    maxWidth: theme.spacing(20)
+  },
   icon: {
-    margin: "2rem",
     color: theme.palette.secondary.light,
     "&:hover": {
       color: theme.palette.primary.light,
@@ -57,7 +64,7 @@ const IndexPage = () => {
           to contact me with any of the links below.
         </Typography>
 
-        <div>
+        <div className={classes.iconsContainer}>
           <a
             href="https://github.com/bldulam1/"
             target="_blank"
@@ -65,14 +72,14 @@ const IndexPage = () => {
           >
             <FontAwesomeIcon
               className={classes.icon}
-              size="4x"
+              size="3x"
               icon={["fab", "github"]}
             />
           </a>
           <a href={`mailto: brendondulam06@gmail.com`}>
             <FontAwesomeIcon
               className={classes.icon}
-              size="4x"
+              size="3x"
               icon={["fab", "google"]}
             />
           </a>
@@ -83,7 +90,7 @@ const IndexPage = () => {
           >
             <FontAwesomeIcon
               className={classes.icon}
-              size="4x"
+              size="3x"
               icon={["fab", "linkedin-in"]}
             />
           </a>

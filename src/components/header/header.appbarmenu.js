@@ -41,6 +41,9 @@ const useStyles = makeStyles(theme => ({
       color: theme.palette.primary.light,
     },
   },
+  SwipeableDrawer: {
+    background: "#333f58",
+  },
   drawer: {
     width: 250,
     display: "flex",
@@ -84,8 +87,12 @@ function MenuContents({ isDesktop }) {
   ) : (
     <Box className={classes.drawer}>
       {Object.keys(components).map(component => (
-        <Link key={uuid()} to={components[component]}>
-          <Typography className={classes.drawerLink}>{component} </Typography>
+        <Link
+          key={uuid()}
+          to={components[component]}
+          className={classes.drawerLink}
+        >
+          <Typography>{component} </Typography>
         </Link>
       ))}
       <br />
@@ -97,6 +104,7 @@ function MenuContents({ isDesktop }) {
 export default function() {
   const theme = useTheme()
   const isDesktop = !useMediaQuery(theme.breakpoints.down("sm"))
+  const classes = useStyles()
 
   const [state, setState] = useState({
     isDrawerOpen: false,
@@ -114,6 +122,7 @@ export default function() {
     <IconButton onClick={toggleDrawer}>
       <MenuIcon />
       <SwipeableDrawer
+        classes={{ paper: classes.SwipeableDrawer }}
         anchor="right"
         onClose={toggleDrawer}
         onOpen={toggleDrawer}
