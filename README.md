@@ -8,7 +8,7 @@
   Brendon's portfolio site
 </h1>
 
-This is a complilation of all my side projects where I can showcase my skills as a software engineer. I created this applications using Gatsby, React, Netlify. I included here some CI/CD pipelines in CircleCI, and Github to automatically deploy clean, production level commits.
+This is a complilation of all my side projects where I can showcase my skills as a software engineer. I created this application using Gatsby, React, Netlify. I included here some CI/CD pipelines in CircleCI, and Github to automatically deploy clean, production level commits.
 
 <p align="center">
   <a href="https://app.netlify.com/sites/brittanychiang/deploys" target="_blank">
