@@ -9,7 +9,7 @@ import makeStyles from "@material-ui/core/styles/makeStyles"
 import Typography from "@material-ui/core/Typography"
 import Container from "@material-ui/core/Container"
 import ListItem from "@material-ui/core/ListItem"
-import { ListItemIcon } from "@material-ui/core"
+import ListItemIcon from "@material-ui/core/ListItemIcon"
 import Checkbox from "@material-ui/core/Checkbox"
 import ListItemText from "@material-ui/core/ListItemText"
 import List from "@material-ui/core/List"
@@ -284,7 +284,7 @@ function ToDo() {
       </Typography>
       <List>
         {todos.map(todo => (
-          <ListItem key={uuid.v4()} role={undefined} dense>
+          <ListItem key={uuid()} role={undefined} dense>
             <ListItemIcon>
               <Checkbox
                 edge="start"

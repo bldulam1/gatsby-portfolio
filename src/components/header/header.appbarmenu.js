@@ -11,7 +11,7 @@ import { Link } from "gatsby"
 import React, { useState } from "react"
 import uuid from "uuid"
 
-import cvFile from "../../../assets/CV_Brendon.pdf"
+import cvFile from "../../../assets/Res_Brendon.pdf"
 import fonts from "../../gatsby-theme-material-ui-top-layout/fonts"
 
 const useStyles = makeStyles(theme => ({
