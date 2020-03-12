@@ -1,8 +1,8 @@
 /**
-@param {Array} nodes
-@param {Coordinate} startNode
-@param {Coordinate} targetNode
-*/
+ @param {Array} nodes
+ @param {Coordinate} startNode
+ @param {Coordinate} targetNode
+ */
 export function getBestCandidate(nodes, startNode, targetNode) {
   let bestInd = null
   let bestCost = null
@@ -26,25 +26,33 @@ export class Coordinate {
   constructor(row, col, parent) {
     this.row = row
     this.col = col
-    this.parent = parent | null
+    this.parent = parent || null
     this._cost = undefined
   }
+
   string() {
     return `_${this.row}-${this.col}`
   }
+
   isInside(gridRow, gridCol) {
     return (
       0 <= this.row && this.row < gridRow && 0 <= this.col && this.col < gridCol
     )
   }
+
   neighbors() {
-    return {
-      top: new Coordinate(this.row + 1, this.col, this),
-      bottom: new Coordinate(this.row - 1, this.col, this),
-      left: new Coordinate(this.row, this.col - 1, this),
-      right: new Coordinate(this.row, this.col + 1, this),
-    }
+    return [
+      new Coordinate(this.row + 1, this.col + 1, this),
+      new Coordinate(this.row - 1, this.col + 1, this),
+      new Coordinate(this.row + 1, this.col - 1, this),
+      new Coordinate(this.row - 1, this.col - 1, this),
+      new Coordinate(this.row + 1, this.col, this),
+      new Coordinate(this.row - 1, this.col, this),
+      new Coordinate(this.row, this.col - 1, this),
+      new Coordinate(this.row, this.col + 1, this),
+    ]
   }
+
   cost(start, target) {
     if (this._cost === undefined) {
       const h = Math.abs(this.row - start.row) + Math.abs(this.col - start.col)

@@ -59,7 +59,9 @@ const Layout = ({ children }) => {
         <Header siteTitle="Test" />
         <Box display="flex" flexDirection="row" flexGrow={1} mx={3}>
           <Hidden smDown>
-            <Box className={classes.sideBar}></Box>
+            <Box className={classes.sideBar}>
+
+            </Box>
           </Hidden>
           <Box
             flexGrow={1}
@@ -68,7 +70,7 @@ const Layout = ({ children }) => {
             my="auto"
             justifyContent="flex-start"
           >
-            <Container maxWidth="lg">{children}</Container>
+            <Container maxWidth="lg" >{children}</Container>
           </Box>
           <Hidden smDown>
             <Box className={classes.sideBar} m="auto">

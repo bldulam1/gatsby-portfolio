@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Maps from "../components/works/streetscape/Maps"
 
-export default function about() {
+export default () => {
   return (
     <Layout>
       <SEO title="Works"/>
