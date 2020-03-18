@@ -5,9 +5,6 @@ import React from "react"
 import SEO from "../components/seo"
 
 export default () => {
-  const [state, setState] = React.useState({
-    open: false,
-  })
   return (
     <Layout>
       <SEO title="Page two"/>
