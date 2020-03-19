@@ -74,5 +74,5 @@ export const LOGS = [
 
 export const MOBILE_NOTIFICATION = {
   id: "mobile",
-  message: "Streetscape.gl demo can not run on mobile devices.",
+  message: "For better rendering of this component, please use a PC.",
 }
