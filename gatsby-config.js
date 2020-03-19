@@ -9,9 +9,9 @@ module.exports = {
     `gatsby-theme-material-ui`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'content',
+        name: "content",
         path: `${__dirname}/src/content`,
       },
     },
@@ -32,7 +32,7 @@ module.exports = {
         short_name: `starter`,
         start_url: `/`,
         background_color: "#0A192F",
-        theme_color: '#E83D87',
+        theme_color: "#E83D87",
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },

@@ -22,7 +22,11 @@
 import React, { PureComponent } from "react"
 import { Button, Popover, Tooltip } from "@streetscape.gl/monochrome"
 
-import { TOOLBAR_BUTTON_STYLE, TOOLBAR_MENU_STYLE, TOOLTIP_STYLE } from "./custom-styles"
+import {
+  TOOLBAR_BUTTON_STYLE,
+  TOOLBAR_MENU_STYLE,
+  TOOLTIP_STYLE,
+} from "./custom-styles"
 import * as uuid from "uuid"
 
 const VIEW_MODE = {
@@ -31,8 +35,7 @@ const VIEW_MODE = {
   DRIVER: { desc: "Driver (D)", icon: "driver" },
 }
 
-const noop = () => {
-}
+const noop = () => {}
 
 export default class Toolbar extends PureComponent {
   componentDidMount() {
@@ -92,12 +95,25 @@ export default class Toolbar extends PureComponent {
     const isSelected = mode === this.props.settings.viewMode
 
     return (
-      <Tooltip key={uuid()} content={tooltip} position={position} style={TOOLTIP_STYLE}>
-        <Button type={Button.MUTED} style={TOOLBAR_BUTTON_STYLE} onClick={onClick}>
-          <i className={`icon-camera_${VIEW_MODE[mode].icon} ${isSelected ? "selected" : ""}`}>
-            <span className="path1"/>
-            <span className="path2"/>
-            <span className="path3"/>
+      <Tooltip
+        key={uuid()}
+        content={tooltip}
+        position={position}
+        style={TOOLTIP_STYLE}
+      >
+        <Button
+          type={Button.MUTED}
+          style={TOOLBAR_BUTTON_STYLE}
+          onClick={onClick}
+        >
+          <i
+            className={`icon-camera_${VIEW_MODE[mode].icon} ${
+              isSelected ? "selected" : ""
+            }`}
+          >
+            <span className="path1" />
+            <span className="path2" />
+            <span className="path3" />
           </i>
         </Button>
       </Tooltip>
@@ -106,7 +122,9 @@ export default class Toolbar extends PureComponent {
 
   _renderViewModeSelector = () => {
     return (
-      <div className="menu">{Object.keys(VIEW_MODE).map(item => this._renderViewButton(item))}</div>
+      <div className="menu">
+        {Object.keys(VIEW_MODE).map(item => this._renderViewButton(item))}
+      </div>
     )
   }
 
@@ -127,19 +145,31 @@ export default class Toolbar extends PureComponent {
             onClick: noop,
           })}
         </Popover>
-        <Tooltip content="Recenter Camera (R)" position={Popover.LEFT} style={TOOLTIP_STYLE}>
-          <Button type={Button.MUTED} style={TOOLBAR_BUTTON_STYLE} onClick={this._resetView}>
-            <i className="icon-recenter"/>
+        <Tooltip
+          content="Recenter Camera (R)"
+          position={Popover.LEFT}
+          style={TOOLTIP_STYLE}
+        >
+          <Button
+            type={Button.MUTED}
+            style={TOOLBAR_BUTTON_STYLE}
+            onClick={this._resetView}
+          >
+            <i className="icon-recenter" />
           </Button>
         </Tooltip>
-        <Tooltip content="Get Info (I)" position={Popover.LEFT} style={TOOLTIP_STYLE}>
+        <Tooltip
+          content="Get Info (I)"
+          position={Popover.LEFT}
+          style={TOOLTIP_STYLE}
+        >
           <Button
             type={Button.MUTED}
             style={TOOLBAR_BUTTON_STYLE}
             className={settings.showTooltip ? "active" : ""}
             onClick={() => this._toggleTooltip(!settings.showTooltip)}
           >
-            <i className="icon-select"/>
+            <i className="icon-select" />
           </Button>
         </Tooltip>
       </div>

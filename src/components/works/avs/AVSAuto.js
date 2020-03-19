@@ -1,3 +1,5 @@
+import { ThemeProvider } from "@streetscape.gl/monochrome"
+import { setXVIZConfig } from "@xviz/parser"
 // Copyright (c) 2019 Uber Technologies, Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,22 +21,18 @@
 // THE SOFTWARE.
 
 import React, { PureComponent } from "react"
-
-import { setXVIZConfig } from "@xviz/parser"
 import { XVIZFileLoader } from "streetscape.gl"
-import { ThemeProvider } from "@streetscape.gl/monochrome"
 
-import ControlPanel from "./control-panel"
 import CameraPanel from "./camera-panel"
+import { LOGS, MOBILE_NOTIFICATION } from "./constants"
+import ControlPanel from "./control-panel"
+import { UI_THEME } from "./custom-styles"
+import HUD from "./hud"
+import isMobile from "./is-mobile"
 import MapView from "./map-view"
+import NotificationPanel from "./notification-panel"
 import Timeline from "./timeline"
 import Toolbar from "./toolbar"
-import HUD from "./hud"
-import NotificationPanel from "./notification-panel"
-import isMobile from "./is-mobile"
-
-import { LOGS, MOBILE_NOTIFICATION } from "./constants"
-import { UI_THEME } from "./custom-styles"
 
 import "./stylesheets/main.scss"
 
@@ -61,7 +59,7 @@ export default class AVSAuto extends PureComponent {
       .on("ready", () =>
         loader.updateStreamSettings({
           "/tracklets/label": false,
-        }),
+        })
       )
       .on("error", console.error) // eslint-disable-line
 
@@ -83,7 +81,7 @@ export default class AVSAuto extends PureComponent {
 
   render() {
     if (isMobile) {
-      return <NotificationPanel notification={MOBILE_NOTIFICATION}/>
+      return <NotificationPanel notification={MOBILE_NOTIFICATION} />
     }
 
     const { log, selectedLog, settings } = this.state
@@ -91,21 +89,33 @@ export default class AVSAuto extends PureComponent {
     return (
       <ThemeProvider theme={UI_THEME}>
         <div id="container">
-          <MapView log={log} settings={settings} onSettingsChange={this._onSettingsChange}/>
+          <MapView
+            log={log}
+            settings={settings}
+            onSettingsChange={this._onSettingsChange}
+          />
 
-          <ControlPanel selectedLog={selectedLog} onLogChange={this._onLogChange} log={log}/>
+          <ControlPanel
+            selectedLog={selectedLog}
+            onLogChange={this._onLogChange}
+            log={log}
+          />
 
-          <HUD log={log}/>
+          <HUD log={log} />
 
-          <Timeline log={log}/>
+          <Timeline log={log} />
 
-          <Toolbar settings={settings} onSettingsChange={this._onSettingsChange}/>
+          <Toolbar
+            settings={settings}
+            onSettingsChange={this._onSettingsChange}
+          />
 
-          <CameraPanel log={log} videoAspectRatio={selectedLog.videoAspectRatio}/>
+          <CameraPanel
+            log={log}
+            videoAspectRatio={selectedLog.videoAspectRatio}
+          />
         </div>
       </ThemeProvider>
     )
   }
 }
-
-

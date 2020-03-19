@@ -22,7 +22,8 @@ import { load } from "@loaders.gl/core"
 import { OBJLoader } from "@loaders.gl/obj"
 
 /* eslint-disable camelcase */
-export const MAPBOX_TOKEN = "pk.eyJ1IjoiYmxkdWxhbTEiLCJhIjoiY2p5YncwdHV2MGNuaDNjcW1mYnpxcnF5MiJ9._XwVCfgZCvePQBCvb-BUVA" // eslint-disable-line
+export const MAPBOX_TOKEN =
+  "pk.eyJ1IjoiYmxkdWxhbTEiLCJhIjoiY2p5YncwdHV2MGNuaDNjcW1mYnpxcnF5MiJ9._XwVCfgZCvePQBCvb-BUVA" // eslint-disable-line
 
 export const MAP_STYLE = "mapbox://styles/uberdata/cjfxhlikmaj1b2soyzevnywgs"
 
@@ -40,7 +41,11 @@ export const SETTINGS = {
   viewMode: {
     type: "select",
     title: "View Mode",
-    data: { TOP_DOWN: "Top Down", PERSPECTIVE: "Perspective", DRIVER: "Driver" },
+    data: {
+      TOP_DOWN: "Top Down",
+      PERSPECTIVE: "Perspective",
+      DRIVER: "Driver",
+    },
   },
 }
 
@@ -49,6 +54,14 @@ const LOG_DIR = "https://raw.githubusercontent.com/uber/xviz-data/master"
 /* eslint-disable no-undef */
 export const LOGS = [
   {
+    name: "KITTI-0005",
+    path: `${LOG_DIR}/kitti/2011_09_26_drive_0005_sync`,
+    xvizConfig: {
+      TIME_WINDOW: 0.4,
+    },
+    videoAspectRatio: 10 / 3,
+  },
+  {
     name: "nuTonomy-0006",
     path: `${LOG_DIR}/nutonomy/scene-0006`,
     xvizConfig: {
@@ -56,14 +69,6 @@ export const LOGS = [
       PLAYBACK_FRAME_RATE: 16,
     },
     videoAspectRatio: 16 / 9,
-  },
-  {
-    name: "KITTI-0005",
-    path: `${LOG_DIR}/kitti/2011_09_26_drive_0005_sync`,
-    xvizConfig: {
-      TIME_WINDOW: 0.4,
-    },
-    videoAspectRatio: 10 / 3,
   },
 ]
 

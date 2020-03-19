@@ -40,7 +40,7 @@ export default class ControlPanel extends PureComponent {
 
     switch (this.state.tab) {
       case "streams":
-        return <StreamSettingsPanel log={log} style={STREAM_SETTINGS_STYLE}/>
+        return <StreamSettingsPanel log={log} style={STREAM_SETTINGS_STYLE} />
 
       case "charts":
         return (
@@ -55,10 +55,16 @@ export default class ControlPanel extends PureComponent {
         )
 
       case "info":
-        return <MetadataPanel log={log} selectedLog={selectedLog} onLogChange={onLogChange}/>
+        return (
+          <MetadataPanel
+            log={log}
+            selectedLog={selectedLog}
+            onLogChange={onLogChange}
+          />
+        )
 
       case "help":
-        return <HelpPanel/>
+        return <HelpPanel />
 
       default:
         return null
@@ -69,7 +75,10 @@ export default class ControlPanel extends PureComponent {
     const { tab } = this.state
 
     return (
-      <div className={`tab ${id === tab ? "active" : ""}`} onClick={() => this._gotoTab(id)}>
+      <div
+        className={`tab ${id === tab ? "active" : ""}`}
+        onClick={() => this._gotoTab(id)}
+      >
         {id}
       </div>
     )
@@ -106,13 +115,17 @@ export default class ControlPanel extends PureComponent {
           <div id="help-btn">
             {HelpPanel.renderButton({
               isOpen: isHelpOpen,
-              onClick: () => this._gotoTab(isHelpOpen ? this.state.lastTab : "help"),
+              onClick: () =>
+                this._gotoTab(isHelpOpen ? this.state.lastTab : "help"),
             })}
           </div>
           {!isHelpOpen && (
             <div id="tabs">
               {this._renderTab({ id: "info", description: "Log Info" })}
-              {this._renderTab({ id: "streams", description: "Stream Settings" })}
+              {this._renderTab({
+                id: "streams",
+                description: "Stream Settings",
+              })}
               {this._renderTab({ id: "charts", description: "Charts" })}
             </div>
           )}

@@ -18,20 +18,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import React, {PureComponent} from 'react';
-import {Tooltip, Button} from '@streetscape.gl/monochrome';
+import React, { PureComponent } from "react"
+import { Tooltip, Button } from "@streetscape.gl/monochrome"
 
-import {TOOLTIP_STYLE, HELP_BUTTON_STYLE} from './custom-styles';
+import { TOOLTIP_STYLE, HELP_BUTTON_STYLE } from "./custom-styles"
 
 export default class HelpPanel extends PureComponent {
   static renderButton(props) {
     return (
       <Tooltip content="Help" style={TOOLTIP_STYLE}>
         <Button type={Button.MUTED} style={HELP_BUTTON_STYLE} {...props}>
-          <i className={props.isOpen ? 'icon-close' : 'icon-help'} />
+          <i className={props.isOpen ? "icon-close" : "icon-help"} />
         </Button>
       </Tooltip>
-    );
+    )
   }
 
   render() {
@@ -107,6 +107,6 @@ export default class HelpPanel extends PureComponent {
           </tbody>
         </table>
       </div>
-    );
+    )
   }
 }

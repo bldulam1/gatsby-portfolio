@@ -23,7 +23,7 @@ const useStyle = makeStyles(() => ({
     flexDirection: "row",
     justifyContent: "space-between",
     width: "100%",
-    maxWidth: theme.spacing(20)
+    maxWidth: theme.spacing(20),
   },
   icon: {
     color: theme.palette.secondary.light,

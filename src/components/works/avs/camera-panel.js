@@ -73,7 +73,7 @@ export default class CameraPanel extends PureComponent {
         onUpdate={this._onUpdate}
         style={FLOAT_PANEL_STYLE}
       >
-        <XVIZPanel log={log} name="Camera" style={XVIZ_PANEL_STYLE}/>
+        <XVIZPanel log={log} name="Camera" style={XVIZ_PANEL_STYLE} />
       </FloatPanel>
     )
   }

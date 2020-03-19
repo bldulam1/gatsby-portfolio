@@ -1,7 +1,7 @@
 /* global window */
-import Bowser from 'bowser';
+import Bowser from "bowser"
 
-const browser = Bowser.getParser(window.navigator.userAgent);
-const platform = browser.parsePlatform();
+const browser = Bowser.getParser(window.navigator.userAgent)
+const platform = browser.parsePlatform()
 
-export default platform && platform.type === 'mobile';
+export default platform && platform.type === "mobile"

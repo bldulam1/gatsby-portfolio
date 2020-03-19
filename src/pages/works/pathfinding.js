@@ -1,9 +1,12 @@
 import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
 import Box from "@material-ui/core/Box"
 import Button from "@material-ui/core/Button"
-import { Coordinate, getBestCandidate } from "../components/works/pathfinding/PathFinder.Coordinate"
+import {
+  Coordinate,
+  getBestCandidate,
+} from "../../components/works/pathfinding/PathFinder.Coordinate"
 import { v4 as uuid } from "uuid"
 import makeStyles from "@material-ui/core/styles/makeStyles"
 import Typography from "@material-ui/core/Typography"
@@ -52,7 +55,6 @@ const ROW = 62
 const COL = 48
 const SPEED = 10
 
-
 const zeros = dimensions => {
   const array = []
 
@@ -66,7 +68,7 @@ const zeros = dimensions => {
 const newPuzzle = () => {
   const startCoordinate = new Coordinate(
     Math.floor(Math.random() * ROW),
-    Math.floor(Math.random() * COL),
+    Math.floor(Math.random() * COL)
   )
 
   return {
@@ -75,7 +77,7 @@ const newPuzzle = () => {
     target: new Coordinate(
       Math.floor(Math.random() * ROW),
       Math.floor(Math.random() * COL),
-      null,
+      null
     ),
     blocks: {},
     mouseClicked: false,
@@ -115,8 +117,7 @@ export default () => {
     state.start && state.start.row === rowI && state.start.col === colI
   const isTarget = (rowI, colI) =>
     state.target && state.target.row === rowI && state.target.col === colI
-  const isBlock = (rowI, colI) =>
-    Boolean(state.blocks[getKey(rowI, colI)])
+  const isBlock = (rowI, colI) => Boolean(state.blocks[getKey(rowI, colI)])
   const isCoordinateClosed = (rowI, colI) =>
     Boolean(state.closedCoordinates[getKey(rowI, colI)])
   const isCoordinateOpen = (rowI, colI) =>
@@ -137,7 +138,7 @@ export default () => {
         const bestIndex = getBestCandidate(
           newOpenCoordinates,
           state.start,
-          state.target,
+          state.target
         )
         const current = state.openCoordinates[bestIndex]
 
@@ -186,32 +187,36 @@ export default () => {
     }
   }
 
-
   return (
     <Layout>
-      <SEO title="Path Finding"/>
-      <Box width="100%" height="85vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center"
-           onMouseDown={() => onMouseClick(true)}
-           onMouseUp={() => onMouseClick(false)}
+      <SEO title="Path Finding" />
+      <Box
+        width="100%"
+        height="85vh"
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+        onMouseDown={() => onMouseClick(true)}
+        onMouseUp={() => onMouseClick(false)}
       >
-        <Typography
-          variant="h4"
-          color="primary">
+        <Typography variant="h4" color="primary">
           Path Finding Algorithm
         </Typography>
-        <Typography
-          variant="subtitle1"
-          color="secondary">
+        <Typography variant="subtitle1" color="secondary">
           Move the mouse while clicking to create obstacles
         </Typography>
         <Box flexGrow={1}>
           {state.grid.map((row, ri) => (
-            <div key={uuid()} style={{ display: "flex", flexDirection: "center" }}>
+            <div
+              key={uuid()}
+              style={{ display: "flex", flexDirection: "center" }}
+            >
               {row.map((col, ci) => (
-                  <div
-                    key={uuid()}
-                    onMouseEnter={() => onMouseEnter(ri, ci)}
-                    className={`
+                <div
+                  key={uuid()}
+                  onMouseEnter={() => onMouseEnter(ri, ci)}
+                  className={`
                       ${classes.box}
                       ${isStart(ri, ci) && classes.start}
                       ${isBlock(ri, ci) && classes.block}
@@ -220,49 +225,63 @@ export default () => {
                       ${isPath(ri, ci) && classes.path}
                       ${isCoordinateOpen(ri, ci) && classes.open}
                       ${isCoordinateClosed(ri, ci) && classes.closed}
-                    `}/>
-                ),
-              )}
+                    `}
+                />
+              ))}
             </div>
           ))}
         </Box>
         <Box>
-          <Button color="primary"
-                  variant="outlined"
-                  onClick={() => startStopPathFind()}>{timer ? "Pause" : "Start"}</Button>
-          <Button color="secondary"
-                  variant="outlined"
-                  onClick={() => setstate(newPuzzle())}>
+          <Button
+            color="primary"
+            variant="outlined"
+            onClick={() => startStopPathFind()}
+          >
+            {timer ? "Pause" : "Start"}
+          </Button>
+          <Button
+            color="secondary"
+            variant="outlined"
+            onClick={() => setstate(newPuzzle())}
+          >
             Reset
           </Button>
         </Box>
       </Box>
 
-      <Motivation/>
-      <ToDo/>
+      <Motivation />
+      <ToDo />
     </Layout>
   )
 }
 
 function Motivation() {
-  return <Box display="flex"
-              alignItems="center"
-              justifyContent="center"
-              flexDirection="column"
-              alignItems="center"
-              marginTop={"4rem"}
-  >
-    <Container maxWidth="md">
-      <Typography variant={"h5"} color="primary">Motivation</Typography>
-      <Typography variant={"body1"}>
-        While I was studying SLAM algorithms for LIDAR frame stitching, I came across with the youtube video below.
-        I was amazed how a path-finding problem is solved, so I researched on the algorithm behind this video.
-      </Typography>
-    </Container>
-    <iframe width="700" height="400"
-            src="https://www.youtube.com/embed/IngelKjmecg">
-    </iframe>
-  </Box>
+  return (
+    <Box
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      flexDirection="column"
+      alignItems="center"
+      marginTop={"4rem"}
+    >
+      <Container maxWidth="md">
+        <Typography variant={"h5"} color="primary">
+          Motivation
+        </Typography>
+        <Typography variant={"body1"}>
+          While I was studying SLAM algorithms for LIDAR frame stitching, I came
+          across with the youtube video below. I was amazed how a path-finding
+          problem is solved, so I researched on the algorithm behind this video.
+        </Typography>
+      </Container>
+      <iframe
+        width="700"
+        height="400"
+        src="https://www.youtube.com/embed/IngelKjmecg"
+      ></iframe>
+    </Box>
+  )
 }
 
 function ToDo() {
@@ -275,28 +294,33 @@ function ToDo() {
     "Improve the speed of rendering by re-rendering only updated blocks",
   ]
 
-  return <Box marginTop={"2rem"}>
-    <Container maxWidth="md">
-      <Typography variant={"h5"} color="primary">Future Improvements</Typography>
-      <Typography variant={"body1"}>
-        The implementation above is the first part towards making something like the micromouse challenge.
-        Below are my plans for future improvements.
-      </Typography>
-      <List>
-        {todos.map(todo => (
-          <ListItem key={uuid()} role={undefined} dense>
-            <ListItemIcon>
-              <Checkbox
-                edge="start"
-                checked={false}
-                tabIndex={-1}
-                disableRipple
-              />
-            </ListItemIcon>
-            <ListItemText primary={todo}/>
-          </ListItem>
-        ))}
-      </List>
-    </Container>
-  </Box>
+  return (
+    <Box marginTop={"2rem"}>
+      <Container maxWidth="md">
+        <Typography variant={"h5"} color="primary">
+          Future Improvements
+        </Typography>
+        <Typography variant={"body1"}>
+          The implementation above is the first part towards making something
+          like the micromouse challenge. Below are my plans for future
+          improvements.
+        </Typography>
+        <List>
+          {todos.map(todo => (
+            <ListItem key={uuid()} role={undefined} dense>
+              <ListItemIcon>
+                <Checkbox
+                  edge="start"
+                  checked={false}
+                  tabIndex={-1}
+                  disableRipple
+                />
+              </ListItemIcon>
+              <ListItemText primary={todo} />
+            </ListItem>
+          ))}
+        </List>
+      </Container>
+    </Box>
+  )
 }

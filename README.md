@@ -17,6 +17,7 @@ This is a complilation of all my side projects where I can showcase my skills as
 </p>
 
 ## 🚀 Quick start
+
 1.  **Install the Gatsby CLI**
 
     ```sh
@@ -32,6 +33,7 @@ This is a complilation of all my side projects where I can showcase my skills as
     ```
 
 1.  **Install dependencies**
+
     ```sh
     yarn
     ```
@@ -42,12 +44,13 @@ This is a complilation of all my side projects where I can showcase my skills as
     ```
 
 ## 🚀 Building and Running for Production
+
 1. Generate a full static production build
 
    ```sh
    npm run build
    ```
-   
+
 1. Preview the site as it will appear once deployed
 
    ```sh
@@ -57,4 +60,3 @@ This is a complilation of all my side projects where I can showcase my skills as
 ## 💫 Deploy
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-

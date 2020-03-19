@@ -18,28 +18,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import React, {PureComponent} from 'react';
+import React, { PureComponent } from "react"
 
-import {LogViewer, VIEW_MODE} from 'streetscape.gl';
+import { LogViewer, VIEW_MODE } from "streetscape.gl"
 
-import {MAPBOX_TOKEN, MAP_STYLE, CAR} from './constants';
-import {XVIZ_STYLE, LOG_VIEWER_STYLE} from './custom-styles';
+import { MAPBOX_TOKEN, MAP_STYLE, CAR } from "./constants"
+import { XVIZ_STYLE, LOG_VIEWER_STYLE } from "./custom-styles"
 
 const OBJECT_ICONS = {
-  Car: 'car',
-  Van: 'bus',
-  Pedestrian: 'pedestrian',
-  Cyclist: 'bike'
-};
+  Car: "car",
+  Van: "bus",
+  Pedestrian: "pedestrian",
+  Cyclist: "bike",
+}
 
-const renderObjectLabel = ({id, object, isSelected}) => {
-  const feature = object.getFeature('/tracklets/objects');
+const renderObjectLabel = ({ id, object, isSelected }) => {
+  const feature = object.getFeature("/tracklets/objects")
 
   if (!feature) {
-    return isSelected && <b>{id}</b>;
+    return isSelected && <b>{id}</b>
   }
 
-  const {classes} = feature.base;
+  const { classes } = feature.base
 
   if (isSelected) {
     return (
@@ -47,30 +47,30 @@ const renderObjectLabel = ({id, object, isSelected}) => {
         <div>
           <b>{id}</b>
         </div>
-        <div>{classes.join(' ')}</div>
+        <div>{classes.join(" ")}</div>
       </div>
-    );
+    )
   }
 
-  const objectType = classes && classes.join('');
+  const objectType = classes && classes.join("")
   if (objectType in OBJECT_ICONS) {
     return (
       <div>
         <i className={`icon-${OBJECT_ICONS[objectType]}`} />
       </div>
-    );
+    )
   }
 
-  return null;
-};
+  return null
+}
 
 export default class MapView extends PureComponent {
-  _onViewStateChange = ({viewOffset}) => {
-    this.props.onSettingsChange({viewOffset});
-  };
+  _onViewStateChange = ({ viewOffset }) => {
+    this.props.onSettingsChange({ viewOffset })
+  }
 
   render() {
-    const {log, settings} = this.props;
+    const { log, settings } = this.props
 
     return (
       <LogViewer
@@ -86,6 +86,6 @@ export default class MapView extends PureComponent {
         onViewStateChange={this._onViewStateChange}
         renderObjectLabel={renderObjectLabel}
       />
-    );
+    )
   }
 }

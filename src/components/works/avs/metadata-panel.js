@@ -18,44 +18,46 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import React, {PureComponent} from 'react';
-import {connectToLog} from 'streetscape.gl';
-import {Dropdown} from '@streetscape.gl/monochrome';
-import {LOGS} from './constants';
+import React, { PureComponent } from "react"
+import { connectToLog } from "streetscape.gl"
+import { Dropdown } from "@streetscape.gl/monochrome"
+import { LOGS } from "./constants"
 
 function extractLink(html) {
-  const match = html.match(/href="(.*?)"/);
-  return match && match[1];
+  const match = html.match(/href="(.*?)"/)
+  return match && match[1]
 }
 
 class MetadataPanel extends PureComponent {
   _renderLogSelector() {
-    const {selectedLog} = this.props;
+    const { selectedLog } = this.props
 
     const logs = LOGS.reduce((resMap, log) => {
-      resMap[log.name] = log.name;
-      return resMap;
-    }, {});
+      resMap[log.name] = log.name
+      return resMap
+    }, {})
 
     return (
       <div>
         <Dropdown
           value={selectedLog.name}
           data={logs}
-          onChange={value => this.props.onLogChange(LOGS.find(log => log.name === value))}
+          onChange={value =>
+            this.props.onLogChange(LOGS.find(log => log.name === value))
+          }
         />
       </div>
-    );
+    )
   }
 
   render() {
-    const {metadata} = this.props;
+    const { metadata } = this.props
 
     if (!metadata) {
-      return null;
+      return null
     }
 
-    const hasLicenseInfo = metadata.log_info.source;
+    const hasLicenseInfo = metadata.log_info.source
 
     return (
       <div id="log-info">
@@ -77,7 +79,7 @@ class MetadataPanel extends PureComponent {
             <div>
               <p>{metadata.log_info.description}</p>
               <p>
-                <a href={extractLink(metadata.log_info['license link'])}>
+                <a href={extractLink(metadata.log_info["license link"])}>
                   {metadata.log_info.license}
                 </a>
               </p>
@@ -91,17 +93,21 @@ class MetadataPanel extends PureComponent {
                 </a>
               </p>
               <p>{metadata.log_info.source.author}</p>
-              <p dangerouslySetInnerHTML={{__html: metadata.log_info.source.copyright}} />
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: metadata.log_info.source.copyright,
+                }}
+              />
             </div>
           </div>
         )}
       </div>
-    );
+    )
   }
 }
 
 const getLogState = log => ({
-  metadata: log.getMetadata()
-});
+  metadata: log.getMetadata(),
+})
 
-export default connectToLog({getLogState, Component: MetadataPanel});
+export default connectToLog({ getLogState, Component: MetadataPanel })

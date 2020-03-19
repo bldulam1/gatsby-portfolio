@@ -19,72 +19,72 @@
 // THE SOFTWARE.
 
 /* global document */
-import React, {PureComponent} from 'react';
-import {PlaybackControl} from 'streetscape.gl';
+import React, { PureComponent } from "react"
+import { PlaybackControl } from "streetscape.gl"
 
-import {PLAYBACK_CONTROL_STYLE} from './custom-styles';
+import { PLAYBACK_CONTROL_STYLE } from "./custom-styles"
 
-const formatTimestamp = x => new Date(x * 1000).toUTCString();
+const formatTimestamp = x => new Date(x * 1000).toUTCString()
 
 export default class Timeline extends PureComponent {
   state = {
-    isPlaying: false
-  };
+    isPlaying: false,
+  }
 
   componentDidMount() {
-    document.addEventListener('keydown', this._onKeyDown);
+    document.addEventListener("keydown", this._onKeyDown)
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this._onKeyDown);
+    document.removeEventListener("keydown", this._onKeyDown)
   }
 
   _seek(delta) {
-    const {log} = this.props;
-    const startTime = log.getLogStartTime();
-    const endTime = log.getLogEndTime();
-    let timestamp = log.getCurrentTime();
+    const { log } = this.props
+    const startTime = log.getLogStartTime()
+    const endTime = log.getLogEndTime()
+    let timestamp = log.getCurrentTime()
 
     if (Number.isFinite(timestamp)) {
-      timestamp += delta;
+      timestamp += delta
       if (timestamp < startTime) {
-        timestamp = startTime;
+        timestamp = startTime
       }
       if (timestamp > endTime) {
-        timestamp = endTime;
+        timestamp = endTime
       }
-      log.seek(timestamp);
+      log.seek(timestamp)
     }
   }
 
-  _onPlay = () => this.setState({isPlaying: true});
-  _onPause = () => this.setState({isPlaying: false});
+  _onPlay = () => this.setState({ isPlaying: true })
+  _onPause = () => this.setState({ isPlaying: false })
 
   _onKeyDown = evt => {
     switch (evt.keyCode) {
       case 32: // space
         if (this.state.isPlaying) {
-          this._onPause();
+          this._onPause()
         } else {
-          this._onPlay();
+          this._onPlay()
         }
-        break;
+        break
 
       case 37: // left
-        this._seek(-0.1);
-        break;
+        this._seek(-0.1)
+        break
 
       case 39: // right
-        this._seek(0.1);
-        break;
+        this._seek(0.1)
+        break
 
       default:
     }
-  };
+  }
 
   render() {
-    const {log} = this.props;
-    const {isPlaying} = this.state;
+    const { log } = this.props
+    const { isPlaying } = this.state
 
     return (
       <div id="timeline">
@@ -100,6 +100,6 @@ export default class Timeline extends PureComponent {
           formatTimestamp={formatTimestamp}
         />
       </div>
-    );
+    )
   }
 }
