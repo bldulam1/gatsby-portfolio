@@ -25,14 +25,18 @@ const IndexPage = () => {
           Hi, my name is
         </Typography>
         <Typography fontWeight="fontWeightBold" variant="h2">
-          <Box fontWeight="fontWeightBold">Brendon Dulam</Box>
+          <Box>Brendon Dulam</Box>
         </Typography>
         <Typography color="secondary" variant="h2">
           Web Developer
         </Typography>
         <br />
         <br />
-        <Typography variant="body1">
+        <Typography
+          variant="subtitle1"
+          color="textSecondary"
+          style={{ fontFamily: fonts.secondary }}
+        >
           I'm a software engineer based in Yokohama, Japan specializing in
           building exceptional, high-quality web applications. I specialize in
           NodeJS, Python, GO, React, MongoDB, and Serverless (AWS, Netlify)

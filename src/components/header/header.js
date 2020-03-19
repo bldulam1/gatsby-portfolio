@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   svgInner: {
-    fill: theme.palette.secondary.light,
+    fill: "#fff",
     "&:hover": {
       fill: "#fff",
       cursor: "pointer",

@@ -4,10 +4,11 @@ export default createMuiTheme({
   palette: {
     type: "dark",
     background: {
-      default: "#0A192F",
+      paper: "#1B2B34",
+      default: "#0F1C24",
     },
     common: {
-      black: "#0A192F",
+      black: "#000",
       white: "#fff",
     },
     primary: {
@@ -16,9 +17,9 @@ export default createMuiTheme({
       dark: "#a47700",
     },
     secondary: {
-      main: "#a7969b",
-      light: "#d9c7cc",
-      dark: "#78686d",
+      main: "#49888b",
+      light: "#79b8bb",
+      dark: "#155b5e",
     },
   },
 })

@@ -58,7 +58,7 @@ const IndexPage = () => {
           variant="body1"
           className={classes.mb2}
           align="center"
-          color="secondary"
+          color="textSecondary"
         >
           Whether for a potential project, or just to say hi, please feel free
           to contact me through any of the links below.

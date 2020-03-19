@@ -21,6 +21,7 @@ import { setXVIZConfig } from "@xviz/parser"
 // THE SOFTWARE.
 
 import React, { PureComponent } from "react"
+import { isMobile } from "react-device-detect"
 import { XVIZFileLoader } from "streetscape.gl"
 
 import CameraPanel from "./camera-panel"
@@ -28,7 +29,6 @@ import { LOGS, MOBILE_NOTIFICATION } from "./constants"
 import ControlPanel from "./control-panel"
 import { UI_THEME } from "./custom-styles"
 import HUD from "./hud"
-import isMobile from "./is-mobile"
 import MapView from "./map-view"
 import NotificationPanel from "./notification-panel"
 import Timeline from "./timeline"

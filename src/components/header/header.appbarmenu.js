@@ -122,7 +122,6 @@ export default function() {
     <IconButton onClick={toggleDrawer}>
       <MenuIcon />
       <SwipeableDrawer
-        classes={{ paper: classes.SwipeableDrawer }}
         anchor="right"
         onClose={toggleDrawer}
         onOpen={toggleDrawer}
