@@ -24,10 +24,10 @@ export default ({ image, link, title, description }) => {
       <CardActionArea onClick={() => navigate(link)}>
         <CardMedia
           component="img"
-          alt="Contemplative Reptile"
+          alt={title}
           height="140"
           image={image}
-          title="Contemplative Reptile"
+          title={title}
         />
         <CardContent>
           <Typography

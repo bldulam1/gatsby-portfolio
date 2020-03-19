@@ -1,7 +1,7 @@
 import { Typography } from "@material-ui/core"
 import React from "react"
 
-// import AVSAuto from "../../components/works/avs/AVSAuto"
+import AVSAuto from "../../components/works/avs/AVSAuto"
 
 export default () => {
   const isSSR = typeof window === "undefined"
@@ -16,7 +16,7 @@ export default () => {
             </Typography>
           }
         >
-          Test
+          <AVSAuto />
         </React.Suspense>
       )}
     </>
