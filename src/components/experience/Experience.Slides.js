@@ -1,4 +1,4 @@
-import { Link } from "@material-ui/core"
+import { Link, List, ListItem, ListItemText } from "@material-ui/core"
 import Box from "@material-ui/core/Box"
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
@@ -21,20 +21,22 @@ const useStyles = makeStyles(theme => ({
   },
   link: {
     "&:hover": {
-      color: theme.palette.secondary.main,
+      color: theme.palette.secondary.contrastText,
     },
   },
 }))
 
 export default ({ jobs }) => {
-  const [jobIndex, setJobIndex] = React.useState(0)
+  const [state, setState] = React.useState({ index: 0, isPlaying: false })
   const jobsLen = jobs.length
   const classes = useStyles()
 
-  const { image, company, role, companySite } = jobs[jobIndex]
-
+  const { image, company, role, date, companySite, points } = jobs[state.index]
   return (
     <Box minHeight="80vh" display="flex" flexDirection="column">
+      <Typography component="h4" variant="h4" color="textPrimary">
+        Work Experience
+      </Typography>
       <Card className={classes.card}>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={5} lg={6}>
@@ -51,13 +53,25 @@ export default ({ jobs }) => {
               </Typography>
               <Link href={companySite} underline="none">
                 <Typography
+                  component="span"
                   variant="subtitle1"
-                  color="textSecondary"
+                  color="secondary"
                   className={classes.link}
                 >
                   {company}
                 </Typography>
               </Link>
+              <Typography variant="caption" color="textSecondary">
+                {` (${date})`}
+              </Typography>
+
+              <List>
+                {points.map((point, index) => (
+                  <ListItem key={"point-key-" + index}>
+                    <ListItemText primary={point} />
+                  </ListItem>
+                ))}
+              </List>
             </CardContent>
           </Grid>
         </Grid>
@@ -68,11 +82,7 @@ export default ({ jobs }) => {
         justifyContent="center"
         marginTop="2rem"
       >
-        <Control
-          jobIndex={jobIndex}
-          setJobIndex={setJobIndex}
-          jobsLen={jobsLen}
-        />
+        <Control state={state} setState={setState} jobsLen={jobsLen} />
       </Box>
     </Box>
   )

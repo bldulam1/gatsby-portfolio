@@ -35,7 +35,7 @@ export default () => {
           It stores the states of components in the browser's localStorage.`}
         />
         <WorksCard
-          image={require("../images/gatsby-astronaut.png")}
+          image={require("../images/maze.jpg")}
           link="/works/pathfinding"
           title="A* Path Finding Algorithm"
           description={`This is an implementation of the A* algorithm in React.

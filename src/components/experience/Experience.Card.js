@@ -1,30 +1,12 @@
-import Card from "@material-ui/core/Card"
-import CardContent from "@material-ui/core/CardContent"
-import CardMedia from "@material-ui/core/CardMedia"
 import IconButton from "@material-ui/core/IconButton"
 import { makeStyles, useTheme } from "@material-ui/core/styles"
-import Typography from "@material-ui/core/Typography"
+import PauseIcon from "@material-ui/icons/PauseCircleFilledOutlined"
 import PlayArrowIcon from "@material-ui/icons/PlayArrow"
 import SkipNextIcon from "@material-ui/icons/SkipNext"
 import SkipPreviousIcon from "@material-ui/icons/SkipPrevious"
 import React from "react"
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-    display: "flex",
-  },
-  details: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  content: {
-    flex: "1 0 auto",
-  },
-  cover: {
-    width: "50vw",
-    height: "auto",
-  },
   controls: {
     display: "flex",
     alignItems: "center",
@@ -38,50 +20,46 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export const ExperienceCard = ({ company, role, image }) => {
-  const classes = useStyles()
+let intervalTimer = null
 
-  return (
-    <Card className={classes.root}>
-      Test
-      {/* <div className={classes.details}>
-        <CardContent >
-          <Typography component="h5" variant="h5">
-            {company}
-          </Typography>
-          <Typography variant="subtitle1" color="textSecondary">
-            {role}
-          </Typography>
-        </CardContent>
-      </div>
-      <CardMedia
-        className={classes.cover}
-        image={image}
-        title="Live from space album cover"
-      /> */}
-    </Card>
-  )
-}
+export const Control = ({ state, setState, jobsLen }) => {
+  const { index, isPlaying } = state
 
-export const Control = ({ jobIndex, setJobIndex, jobsLen }) => {
+  const handlePlayPauseClick = () => {
+    setState({ ...state, isPlaying: !isPlaying })
+    // if (intervalTimer) {
+    //   clearInterval(intervalTimer)
+    //   intervalTimer = null
+    // } else {
+    //   intervalTimer = setInterval(() => {
+    //     setState({ ...state, index: (index + 1) % jobsLen })
+    //   }, 1000)
+    // }
+    console.log("clicked", isPlaying)
+  }
+
   const theme = useTheme()
   const classes = useStyles()
   return (
     <div className={classes.controls}>
       <IconButton
         aria-label="previous"
-        disabled={jobIndex == 0}
-        onClick={() => setJobIndex(jobIndex - 1)}
+        disabled={index === 0}
+        onClick={() => setState({ ...state, index: index - 1 })}
       >
         {theme.direction === "rtl" ? <SkipNextIcon /> : <SkipPreviousIcon />}
       </IconButton>
-      <IconButton aria-label="play/pause">
-        <PlayArrowIcon className={classes.playIcon} />
+      <IconButton aria-label="play/pause" onClick={handlePlayPauseClick}>
+        {isPlaying ? (
+          <PauseIcon className={classes.playIcon} />
+        ) : (
+          <PlayArrowIcon className={classes.playIcon} />
+        )}
       </IconButton>
       <IconButton
         aria-label="next"
-        disabled={jobIndex == jobsLen - 1}
-        onClick={() => setJobIndex(jobIndex + 1)}
+        disabled={index === jobsLen - 1}
+        onClick={() => setState({ ...state, index: index + 1 })}
       >
         {theme.direction === "rtl" ? <SkipPreviousIcon /> : <SkipNextIcon />}
       </IconButton>
