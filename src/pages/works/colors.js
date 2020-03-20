@@ -15,7 +15,7 @@ export default () => {
               Loading page
             </Typography>
           }
-         >
+        >
           <BrowserRouter>
             <ColorTool />
           </BrowserRouter>

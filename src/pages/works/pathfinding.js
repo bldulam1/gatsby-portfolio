@@ -13,7 +13,10 @@ import { v4 as uuid } from "uuid"
 
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import { Coordinate, getBestCandidate } from "../../components/works/pathfinding/PathFinder.Coordinate"
+import {
+  Coordinate,
+  getBestCandidate,
+} from "../../components/works/pathfinding/PathFinder.Coordinate"
 
 const useStyle = makeStyles(theme => ({
   box: {
