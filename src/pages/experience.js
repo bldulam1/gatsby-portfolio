@@ -1,34 +1,39 @@
 import Box from "@material-ui/core/Box"
-import Typography from "@material-ui/core/Typography"
 import React from "react"
 
-import experience from "../components/data/experience"
-import Work from "../components/experience/Experience.Work"
+import ExperienceSlides from "../components/experience/Experience.Slides"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-// import { fonts } from "../components/theme"
-
-// const useStyle = makeStyles(theme => ({
-//   greetings: {
-//     fontFamily: fonts.secondary,
-//   },
-// }))
+const jobs = [
+  {
+    company: "Rokko & Associates (HEXEL)",
+    companySite: "https://www.hexelworks.com/",
+    location: "Minato, Tokyo",
+    image: require("../images/electrical.jpg"),
+    role: "Electrical Engineer",
+  },
+  {
+    company: "Koto Electric Co. Ltd.",
+    companySite: "https://www.koto-jp.com/en/",
+    location: "Taito, Tokyo",
+    image: require("../images/electronics.jpg"),
+    role: "LED Design and Development Engineer",
+  },
+  {
+    company: "Veoneer Japan",
+    companySite: "https://www.veoneer.com/",
+    location: "Yokohama, Kanagawa",
+    image: require("../images/software.jpg"),
+    role: "Software Engineer",
+  },
+]
 
 export default function() {
-  // const theme = useTheme()
-  // const classes = useStyle()
-  // const isDesktop = !useMediaQuery(theme.breakpoints.down("sm"))
-
   return (
     <Layout>
       <SEO title="Experience" />
-      <Box>
-        <Typography variant="h4">Work Experience</Typography>
-        {experience.experiences.map((exp, index) => (
-          <Work key={`experience-${index}`} experience={exp} />
-        ))}
-      </Box>
+      <ExperienceSlides jobs={jobs} />
     </Layout>
   )
 }

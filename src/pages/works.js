@@ -7,14 +7,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import WorksCard from "../components/works/works-components/Works.Card"
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-})
-
 export default () => {
-  const classes = useStyles()
   return (
     <Layout>
       <SEO title="Side Projects" />
