@@ -1,5 +1,6 @@
-import sizes from "./sizes"
 import bg from "./bg.svg"
+import sizes from "./sizes"
+
 export default {
   "@global": {
     ".fade-exit": {
@@ -16,8 +17,8 @@ export default {
     alignItems: "flex-start",
     justifyContent: "center",
     /* background by SVGBackgrounds.com */
-    backgroundColor: "#394bad",
-    backgroundImage: `url(${bg})`,
+    // backgroundColor: "#394bad",
+    // backgroundImage: `url(${bg})`,
     overflow: "scroll",
   },
   heading: {

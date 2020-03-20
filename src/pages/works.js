@@ -33,7 +33,14 @@ export default () => {
           I also developed a server-side point cloud extraction tool (from Lidar UDP packets)
           that is used for capturing point cloud data from Velodyne Lidars`}
         />
-        <WorksCard image={require("../images/gatsby-astronaut.png")} />
+        <WorksCard
+          image={require("../images/react.colors.jpg")}
+          link="/works/colors"
+          title="Colors Tool"
+          description={`This is a Single Page Application originally built using Create React App.
+          This is a clone of websites like Flat UI Colors and Material UI Colors.
+          It uses the browser's localStorage to store states of components.`}
+        />
         <WorksCard image={require("../images/gatsby-astronaut.png")} />
         <WorksCard image={require("../images/gatsby-astronaut.png")} />
       </Box>

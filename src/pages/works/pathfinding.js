@@ -1,21 +1,19 @@
-import React from "react"
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
 import Box from "@material-ui/core/Box"
 import Button from "@material-ui/core/Button"
-import {
-  Coordinate,
-  getBestCandidate,
-} from "../../components/works/pathfinding/PathFinder.Coordinate"
-import { v4 as uuid } from "uuid"
-import makeStyles from "@material-ui/core/styles/makeStyles"
-import Typography from "@material-ui/core/Typography"
+import Checkbox from "@material-ui/core/Checkbox"
 import Container from "@material-ui/core/Container"
+import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemIcon from "@material-ui/core/ListItemIcon"
-import Checkbox from "@material-ui/core/Checkbox"
 import ListItemText from "@material-ui/core/ListItemText"
-import List from "@material-ui/core/List"
+import makeStyles from "@material-ui/core/styles/makeStyles"
+import Typography from "@material-ui/core/Typography"
+import React from "react"
+import { v4 as uuid } from "uuid"
+
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
+import { Coordinate, getBestCandidate } from "../../components/works/pathfinding/PathFinder.Coordinate"
 
 const useStyle = makeStyles(theme => ({
   box: {
@@ -276,6 +274,7 @@ function Motivation() {
         </Typography>
       </Container>
       <iframe
+        title="Micromouse Challenge"
         width="700"
         height="400"
         src="https://www.youtube.com/embed/IngelKjmecg"
