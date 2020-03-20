@@ -1,5 +1,5 @@
+import Typography from "@material-ui/core/Typography"
 import React from "react"
-import { BrowserRouter } from "react-router-dom"
 
 import ColorTool from "../../components/works/color-tool/ColorTool"
 
@@ -16,9 +16,7 @@ export default () => {
             </Typography>
           }
         >
-          <BrowserRouter>
-            <ColorTool />
-          </BrowserRouter>
+          <ColorTool />
         </React.Suspense>
       )}
     </>
