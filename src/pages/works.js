@@ -36,13 +36,19 @@ export default () => {
         <WorksCard
           image={require("../images/react.colors.jpg")}
           link="/works/colors"
-          title="Colors Tool"
+          title="Color Tool"
           description={`This is a Single Page Application originally built using Create React App.
-          This is a clone of websites like Flat UI Colors and Material UI Colors.
-          It uses the browser's localStorage to store states of components.`}
+          It is a clone of websites like Flat UI Colors and Material UI Colors.
+          It stores the states of components in the browser's localStorage.`}
         />
-        <WorksCard image={require("../images/gatsby-astronaut.png")} />
-        <WorksCard image={require("../images/gatsby-astronaut.png")} />
+        <WorksCard
+          image={require("../images/gatsby-astronaut.png")}
+          link="/works/pathfinding"
+          title="A* Path Finding Algorithm"
+          description={`This is an implementation of the A* algorithm in React.
+          I was inspired to create this project after watching the Micromouse Challenge.
+          The path that it finds is not yet optimized, also I am still improving the Maze builder feature.`}
+        />
       </Box>
     </Layout>
   )

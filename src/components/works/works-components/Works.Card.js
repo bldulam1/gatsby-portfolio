@@ -7,21 +7,35 @@ import CardMedia from "@material-ui/core/CardMedia"
 import Typography from "@material-ui/core/Typography"
 import makeStyles from "@material-ui/styles/makeStyles"
 import { navigate } from "@reach/router"
-import { Link } from "gatsby"
 import React from "react"
 
 const useStyles = makeStyles(theme => ({
-  root: {
+  card: {
     maxWidth: 345,
     margin: theme.spacing(2),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+  },
+  cardActionArea: {
+    flexGrow: 1,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+  },
+  cardContent: {
+    flexGrow: 1,
   },
 }))
 
 export default ({ image, link, title, description }) => {
   const classes = useStyles()
   return (
-    <Card className={classes.root}>
-      <CardActionArea onClick={() => navigate(link)}>
+    <Card className={classes.card}>
+      <CardActionArea
+        onClick={() => navigate(link)}
+        className={classes.cardActionArea}
+      >
         <CardMedia
           component="img"
           alt={title}
@@ -29,7 +43,7 @@ export default ({ image, link, title, description }) => {
           image={image}
           title={title}
         />
-        <CardContent>
+        <CardContent className={classes.cardContent}>
           <Typography
             gutterBottom
             variant="h5"

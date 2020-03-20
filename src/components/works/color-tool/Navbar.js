@@ -1,14 +1,16 @@
+import IconButton from "@material-ui/core/IconButton"
+import MenuItem from "@material-ui/core/MenuItem"
+import Select from "@material-ui/core/Select"
+import Snackbar from "@material-ui/core/Snackbar"
+import CloseIcon from "@material-ui/icons/Close"
+import { withStyles } from "@material-ui/styles"
+import Slider from "rc-slider"
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
-import { withStyles } from "@material-ui/styles"
-import Select from "@material-ui/core/Select"
-import MenuItem from "@material-ui/core/MenuItem"
-import Snackbar from "@material-ui/core/Snackbar"
-import IconButton from "@material-ui/core/IconButton"
-import CloseIcon from "@material-ui/icons/Close"
-import Slider from "rc-slider"
-import "rc-slider/assets/index.css"
+
 import styles from "./styles/NavbarStyles"
+
+import "rc-slider/assets/index.css"
 
 class Navbar extends Component {
   constructor(props) {
@@ -30,7 +32,7 @@ class Navbar extends Component {
     return (
       <header className={classes.Navbar}>
         <div className={classes.logo}>
-          <Link to="/">reactcolorpicker</Link>
+          <Link to="/">Color Tool</Link>
         </div>
         {showingAllColors && (
           <div>
