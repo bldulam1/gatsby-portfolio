@@ -2,7 +2,10 @@ import React from "react"
 import Chart from "./Chart"
 import { getData } from "./utils"
 
-import { Paper } from "@material-ui/core"
+import Paper from "@material-ui/core/Paper"
+import Button from "@material-ui/core/Button"
+import Box from "@material-ui/core/Box"
+import withStyles from "@material-ui/styles/withStyles"
 
 export default class ChartComponent extends React.Component {
   componentDidMount() {
@@ -49,9 +52,19 @@ export default class ChartComponent extends React.Component {
     }
 
     return (
-      <Paper style={{ background: "#eee" }}>
-        <Chart type="hybrid" data={this.state.data} />{" "}
-      </Paper>
+      <>
+        <Paper style={{ background: "#eee" }}>
+          <Chart type="hybrid" data={this.state.data} />
+        </Paper>
+        <Box marginTop="2rem">
+          <Button variant="contained" color="primary">
+            Buy
+          </Button>
+          <Button variant="contained" color="secondary">
+            Sell
+          </Button>
+        </Box>
+      </>
     )
   }
 }
