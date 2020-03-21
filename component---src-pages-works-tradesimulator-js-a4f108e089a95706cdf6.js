@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[13],{kbx4:function(e,n,t){"use strict";t.r(n);var a=t("q1tI"),l=t.n(a),r=t("Bl7J"),c=t("vrFN"),i=function(){return l.a.createElement("div",null,"Hello")};n.default=function(){return l.a.createElement(r.a,null,l.a.createElement(c.a,{title:"Financial Trading tool"}),l.a.createElement(i,null))}}}]);
+//# sourceMappingURL=component---src-pages-works-tradesimulator-js-a4f108e089a95706cdf6.js.map
