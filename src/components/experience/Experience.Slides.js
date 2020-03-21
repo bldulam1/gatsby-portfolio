@@ -18,6 +18,7 @@ const useStyles = makeStyles(theme => ({
   },
   cardMedia: {
     height: "100%",
+    minHeight: "40vh",
   },
   link: {
     "&:hover": {

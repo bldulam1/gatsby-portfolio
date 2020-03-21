@@ -37,7 +37,7 @@ export default () => {
         <WorksCard
           image={require("../images/maze.jpg")}
           link="/works/pathfinding"
-          title="A* Path Finding Algorithm"
+          title="Path Finding Algorithm"
           description={`This is an implementation of the A* algorithm in React.
           I was inspired to create this project after watching the Micromouse Challenge.
           The path that it finds is not yet optimized, also I am still improving the Maze builder feature.`}
