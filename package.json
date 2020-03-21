@@ -5,6 +5,10 @@
   "version": "0.1.0",
   "author": "Brendon Dulam <brendondulam06@gmail.com>",
   "dependencies": {
+    "d3-dsv": "^1.0.8",
+    "d3-format": "^1.2.1",
+    "d3-scale": "^1.0.7",
+    "d3-time-format": "^2.1.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
@@ -48,7 +52,9 @@
     "react-swipeable-views": "^0.13.9",
     "react-transition-group": "^2.6.1",
     "streetscape.gl": "^1.0.4",
-    "uuid": "^3.4.0"
+    "uuid": "^3.4.0",
+    "react-stockcharts": "^0.7.8",
+    "shortid": "^2.2.8"
   },
   "devDependencies": {
     "gh-pages": "^2.2.0",
