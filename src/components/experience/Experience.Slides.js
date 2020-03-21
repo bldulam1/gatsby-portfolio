@@ -36,7 +36,7 @@ export default ({ jobs }) => {
   return (
     <Box minHeight="80vh" display="flex" flexDirection="column">
       <Typography component="h4" variant="h4" color="textPrimary">
-        Work Experience
+        Background
       </Typography>
       <Card className={classes.card}>
         <Grid container spacing={3}>
