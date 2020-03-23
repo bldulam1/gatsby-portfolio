@@ -20,14 +20,26 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Box maxWidth="50rem">
-        <Typography color="primary" className={classes.greetings} variant="h6">
+      <Box
+        maxWidth="50rem"
+        display="flex"
+        margin="auto"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Typography
+          color="primary"
+          className={classes.greetings}
+          variant="h6"
+          align="center"
+        >
           Hi, my name is
         </Typography>
-        <Typography fontWeight="fontWeightBold" variant="h2">
+        <Typography fontWeight="fontWeightBold" variant="h2" align="center">
           <Box>Brendon Dulam</Box>
         </Typography>
-        <Typography color="secondary" variant="h2">
+        <Typography color="secondary" variant="h2" align="center">
           Web Developer
         </Typography>
         <br />
@@ -35,9 +47,10 @@ const IndexPage = () => {
         <Typography
           variant="subtitle1"
           color="textSecondary"
+          align="center"
           style={{ fontFamily: fonts.secondary }}
         >
-          I'm a software engineer based in Yokohama, Japan specializing in
+          I'm a software engineer based in Yokohama Japan, specializing in
           building exceptional, high-quality web applications. I specialize in
           NodeJS, Python, GO, React, MongoDB, and Serverless (AWS, Netlify)
           applications.
