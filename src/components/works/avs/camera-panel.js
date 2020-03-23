@@ -1,3 +1,4 @@
+import { FloatPanel } from "@streetscape.gl/monochrome"
 // Copyright (c) 2019 Uber Technologies, Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,10 +19,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-/* global window */
 import React, { PureComponent } from "react"
 import { XVIZPanel } from "streetscape.gl"
-import { FloatPanel } from "@streetscape.gl/monochrome"
 
 import { FLOAT_PANEL_STYLE, XVIZ_PANEL_STYLE } from "./custom-styles"
 

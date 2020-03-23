@@ -1,11 +1,10 @@
+import Box from "@material-ui/core/Box"
+import Button from "@material-ui/core/Button"
+import Paper from "@material-ui/core/Paper"
 import React from "react"
+
 import Chart from "./Chart"
 import { getData } from "./utils"
-
-import Paper from "@material-ui/core/Paper"
-import Button from "@material-ui/core/Button"
-import Box from "@material-ui/core/Box"
-import withStyles from "@material-ui/styles/withStyles"
 
 export default class ChartComponent extends React.Component {
   componentDidMount() {
@@ -26,14 +25,14 @@ export default class ChartComponent extends React.Component {
         return
       }
 
-      const newData = {
-        date: new Date(value.time),
-        open: value.open_24h,
-        high: value.high_24h,
-        low: value.low_24h,
-        close: value.price,
-        volume: value.volume_30d,
-      }
+      // const newData = {
+      //   date: new Date(value.time),
+      //   open: value.open_24h,
+      //   high: value.high_24h,
+      //   low: value.low_24h,
+      //   close: value.price,
+      //   volume: value.volume_30d,
+      // }
     }
 
     getData().then(data => {

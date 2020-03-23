@@ -1,4 +1,3 @@
-import bg from "./bg.svg"
 import sizes from "./sizes"
 
 export default {

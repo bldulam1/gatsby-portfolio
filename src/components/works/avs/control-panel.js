@@ -1,3 +1,4 @@
+import { Link } from "gatsby"
 // Copyright (c) 2019 Uber Technologies, Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,12 +20,11 @@
 // THE SOFTWARE.
 
 import React, { PureComponent } from "react"
-import { Link } from "gatsby"
 import { StreamSettingsPanel, XVIZPanel } from "streetscape.gl"
 
 import { STREAM_SETTINGS_STYLE, XVIZ_PANEL_STYLE } from "./custom-styles"
-import MetadataPanel from "./metadata-panel"
 import HelpPanel from "./help-panel"
+import MetadataPanel from "./metadata-panel"
 
 export default class ControlPanel extends PureComponent {
   state = {
@@ -115,8 +115,7 @@ export default class ControlPanel extends PureComponent {
           <div id="help-btn">
             {HelpPanel.renderButton({
               isOpen: isHelpOpen,
-              onClick: () =>
-                this._gotoTab(isHelpOpen ? this.state.lastTab : "help"),
+              onClick: () => console.log("Hello"),
             })}
           </div>
           <div id="tabs">
@@ -127,7 +126,7 @@ export default class ControlPanel extends PureComponent {
             })}
             {this._renderTab({ id: "charts", description: "Charts" })}
             {this._renderTab({ id: "help", description: "Help" })}
-          </div>{" "}
+          </div>
         </header>
 
         <main>{this._renderTabContent()}</main>

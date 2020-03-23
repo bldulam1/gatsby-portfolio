@@ -1,6 +1,4 @@
 import Box from "@material-ui/core/Box"
-import makeStyles from "@material-ui/styles/makeStyles"
-// import PathFinderMain from "../components/works/pathfinding/PathFinder.Main"
 import React from "react"
 
 import Layout from "../components/layout"
