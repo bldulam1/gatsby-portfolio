@@ -10,6 +10,7 @@ import fonts from "../gatsby-theme-material-ui-top-layout/fonts"
 
 const useStyle = makeStyles(theme => ({
   greetings: {
+    color: theme.palette.primary.light,
     fontFamily: fonts.secondary,
   },
 }))
@@ -29,7 +30,6 @@ const IndexPage = () => {
         alignItems="center"
       >
         <Typography
-          color="primary"
           className={classes.greetings}
           variant="h6"
           align="center"

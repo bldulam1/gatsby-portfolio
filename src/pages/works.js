@@ -1,14 +1,35 @@
 import Box from "@material-ui/core/Box"
+import Typography from "@material-ui/core/Typography"
+import makeStyles from "@material-ui/styles/makeStyles"
 import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import WorksCard from "../components/works/works-components/Works.Card"
+import fonts from "../gatsby-theme-material-ui-top-layout/fonts"
+
+const useStyles = makeStyles(theme => ({
+  title: {
+    fontFamily: fonts.secondary,
+    marginBottom: theme.spacing(2),
+    color: theme.palette.primary.light,
+  },
+}))
 
 export default () => {
+  const classes = useStyles()
   return (
     <Layout>
       <SEO title="Side Projects" />
+      <Typography
+        className={classes.title}
+        component="h6"
+        variant="h6"
+        align="center"
+      >
+        My side projects
+      </Typography>
+
       <Box
         display="flex"
         flexDirection="row"

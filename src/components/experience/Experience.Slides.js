@@ -9,8 +9,14 @@ import Typography from "@material-ui/core/Typography"
 import React from "react"
 
 import { Control } from "../../components/experience/Experience.Card"
+import fonts from "../../gatsby-theme-material-ui-top-layout/fonts"
 
 const useStyles = makeStyles(theme => ({
+  title: {
+    fontFamily: fonts.secondary,
+    marginBottom: theme.spacing(2),
+    color: theme.palette.primary.light,
+  },
   card: {
     flexGrow: 1,
     display: "flex",
@@ -35,8 +41,8 @@ export default ({ jobs }) => {
   const { image, company, role, date, companySite, points } = jobs[state.index]
   return (
     <Box minHeight="80vh" display="flex" flexDirection="column">
-      <Typography component="h4" variant="h4" color="textPrimary">
-        Background
+      <Typography component="h6" variant="h6" className={classes.title}>
+        My background
       </Typography>
       <Card className={classes.card}>
         <Grid container spacing={3}>
@@ -49,7 +55,7 @@ export default ({ jobs }) => {
           </Grid>
           <Grid item xs={12} sm={12} md={7} lg={6}>
             <CardContent>
-              <Typography component="h5" variant="h5" color="primary">
+              <Typography component="h5" variant="h5" color="textPrimary">
                 {role}
               </Typography>
               <Link href={companySite} underline="none">
@@ -69,7 +75,7 @@ export default ({ jobs }) => {
               <List>
                 {points.map((point, index) => (
                   <ListItem key={"point-key-" + index}>
-                    <ListItemText primary={point} />
+                    <ListItemText primary={point} color="textPrimary"/>
                   </ListItem>
                 ))}
               </List>

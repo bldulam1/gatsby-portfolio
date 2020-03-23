@@ -66,7 +66,7 @@ const jobs = [
 export default function() {
   return (
     <Layout>
-      <SEO title="Experience" />
+      <SEO title="Background" />
       <ExperienceSlides jobs={jobs} />
     </Layout>
   )
