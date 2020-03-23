@@ -14,6 +14,7 @@ const useStyles = makeStyles(theme => ({
   },
   toolbar: {
     marginTop: theme.spacing(2),
+    padding: 0,
     display: "flex",
     justifyContent: "space-between",
   },
