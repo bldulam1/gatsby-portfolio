@@ -119,16 +119,15 @@ export default class ControlPanel extends PureComponent {
                 this._gotoTab(isHelpOpen ? this.state.lastTab : "help"),
             })}
           </div>
-          {!isHelpOpen && (
-            <div id="tabs">
-              {this._renderTab({ id: "info", description: "Log Info" })}
-              {this._renderTab({
-                id: "streams",
-                description: "Stream Settings",
-              })}
-              {this._renderTab({ id: "charts", description: "Charts" })}
-            </div>
-          )}
+          <div id="tabs">
+            {this._renderTab({ id: "info", description: "Log Info" })}
+            {this._renderTab({
+              id: "streams",
+              description: "Stream Settings",
+            })}
+            {this._renderTab({ id: "charts", description: "Charts" })}
+            {this._renderTab({ id: "help", description: "Help" })}
+          </div>{" "}
         </header>
 
         <main>{this._renderTabContent()}</main>

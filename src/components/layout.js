@@ -8,6 +8,7 @@ import ThemeProvider from "@material-ui/styles/ThemeProvider"
 import { graphql, useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { isMobile } from "react-device-detect"
 
 import fonts from "../gatsby-theme-material-ui-top-layout/fonts"
 import theme from "../gatsby-theme-material-ui-top-layout/theme"
@@ -24,8 +25,8 @@ const useStyles = makeStyles(theme => ({
     fontFamily: "'Source Code Pro', monospace",
   },
   content: {
-    paddingLeft: theme.spacing(3),
-    paddingRight: theme.spacing(3),
+    paddingLeft: theme.spacing(isMobile ? 3 : 0),
+    paddingRight: theme.spacing(isMobile ? 3 : 0),
   },
   email: {
     fontFamily: fonts.secondary,

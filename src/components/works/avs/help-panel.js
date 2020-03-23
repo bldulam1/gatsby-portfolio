@@ -1,3 +1,4 @@
+import { Button, Tooltip } from "@streetscape.gl/monochrome"
 // Copyright (c) 2019 Uber Technologies, Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,9 +20,8 @@
 // THE SOFTWARE.
 
 import React, { PureComponent } from "react"
-import { Tooltip, Button } from "@streetscape.gl/monochrome"
 
-import { TOOLTIP_STYLE, HELP_BUTTON_STYLE } from "./custom-styles"
+import { HELP_BUTTON_STYLE, TOOLTIP_STYLE } from "./custom-styles"
 
 export default class HelpPanel extends PureComponent {
   static renderButton(props) {
