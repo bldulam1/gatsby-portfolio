@@ -51,7 +51,7 @@ class PaletteList extends Component {
         <div className={classes.container}>
           <nav className={classes.nav}>
             <GatsbyLink to="/">
-              <h1 className={classes.heading}>React Colors</h1>
+              <h1 className={classes.heading}>Home</h1>
             </GatsbyLink>
             <Link to="/palette/new">Create Palette</Link>
           </nav>
