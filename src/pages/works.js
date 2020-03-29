@@ -54,6 +54,7 @@ export default () => {
           It stores the states of components in the browser's localStorage.`}
         />
         <WorksCard
+          disabled={true}
           image={require("../images/trading.jpg")}
           link="/works/tradingsimulator"
           title="Trading Simulator"
@@ -62,6 +63,7 @@ export default () => {
           The assumption for this game is that the action that a user makes does not affect the market significantly as a whole.`}
         />
         <WorksCard
+          disabled={true}
           image={require("../images/maze.jpg")}
           link="/works/pathfinding"
           title="Path Finding Algorithm"

@@ -28,13 +28,14 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export default ({ image, link, title, description }) => {
+export default ({ image, link, title, description, disabled }) => {
   const classes = useStyles()
   return (
     <Card className={classes.card}>
       <CardActionArea
         onClick={() => navigate(link)}
         className={classes.cardActionArea}
+        disabled={disabled}
       >
         <CardMedia
           component="img"
@@ -58,7 +59,7 @@ export default ({ image, link, title, description }) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary" variant="outlined">
+        <Button size="small" color="primary" variant="outlined" disabled>
           Like
         </Button>
       </CardActions>
