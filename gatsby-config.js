@@ -1,10 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Brendon`,
+    title: `Brendon's Profile`,
     description: `This is my web portfolio.`,
     author: `Brendon Dulam`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-apollo',
+      options: {
+        uri: 'https://covid19-graphql.now.sh/'
+      }
+    },
     `gatsby-plugin-sass`,
     `gatsby-theme-material-ui`,
     `gatsby-plugin-react-helmet`,
