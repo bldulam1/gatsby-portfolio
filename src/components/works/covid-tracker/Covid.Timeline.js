@@ -1,6 +1,15 @@
 import Box from "@material-ui/core/Box"
 import React, { PureComponent } from "react"
-import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
+import {
+  CartesianGrid,
+  Legend,
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts"
 
 import CovidCardTemplate from "./Covid.Card.Template"
 

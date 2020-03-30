@@ -29,11 +29,7 @@ const IndexPage = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Typography
-          className={classes.greetings}
-          variant="h6"
-          align="center"
-        >
+        <Typography className={classes.greetings} variant="h6" align="center">
           Hi, my name is
         </Typography>
         <Typography fontWeight="fontWeightBold" variant="h2" align="center">

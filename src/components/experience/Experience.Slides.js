@@ -75,7 +75,7 @@ export default ({ jobs }) => {
               <List>
                 {points.map((point, index) => (
                   <ListItem key={"point-key-" + index}>
-                    <ListItemText primary={point} color="textPrimary"/>
+                    <ListItemText primary={point} color="textPrimary" />
                   </ListItem>
                 ))}
               </List>
