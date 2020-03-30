@@ -10,10 +10,10 @@ export default () => (
   <CovidCardTemplate title="Affected Countries">
     <form autoComplete="off">
       <Grid container spacing={2}>
-        <Grid item lg={8}>
+        <Grid item lg={8} md={6} sm={6} xs={12}>
           <TextField id="country-search" label="Search country" fullWidth />
         </Grid>
-        <Grid item lg={4}>
+        <Grid item lg={4} md={6} sm={6} xs={12}>
           <TextField id="sort-by-selection" label="sort by" select fullWidth>
             <MenuItem>Cases(total)</MenuItem>
             <MenuItem>Cases(today)</MenuItem>
@@ -22,7 +22,8 @@ export default () => (
             <MenuItem>Recoveries</MenuItem>
           </TextField>
         </Grid>
-        <Grid item lg={4}>
+        <Grid item lg={12}>
+          Countries
           {/* <FixedSizeList height={400}>
             {}
           </FixedSizeList> */}
