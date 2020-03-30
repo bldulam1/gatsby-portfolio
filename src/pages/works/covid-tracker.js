@@ -26,7 +26,7 @@ export default () => {
   })
 
   React.useEffect(() => {
-    state.countries.length == 0 &&
+    state.countries.length === 0 &&
       client
         .query({
           query: gql`
@@ -83,28 +83,28 @@ export default () => {
       <SEO title="Covid Tracker" />
       <Provider value={{ state, setState }}>
         <Grid container spacing={2}>
-          <Grid item lg={3} md={6} sm={6} xs={6}>
+          <Grid item lg={3} md={6} sm={6} xs={12}>
             <CovidCardType1
               title="Infections"
               total={state.confirmed.total}
               latest={state.confirmed.latest}
             />
           </Grid>
-          <Grid item lg={3} md={6} sm={6} xs={6}>
+          <Grid item lg={3} md={6} sm={6} xs={12}>
             <CovidCardType1
               title="Deaths"
               total={state.deaths.total}
               latest={state.deaths.latest}
             />
           </Grid>
-          <Grid item lg={3} md={6} sm={6} xs={6}>
+          <Grid item lg={3} md={6} sm={6} xs={12}>
             <CovidCardType1
               title="Recoveries"
               total={state.recovered.total}
               latest={state.recovered.latest}
             />
           </Grid>
-          <Grid item lg={3} md={6} sm={6} xs={6}>
+          <Grid item lg={3} md={6} sm={6} xs={12}>
             <CovidCardType1
               title="Critical"
               total={state.critical.total}
