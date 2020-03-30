@@ -6,10 +6,10 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-apollo',
+      resolve: "gatsby-plugin-apollo",
       options: {
-        uri: 'https://covid19-graphql.now.sh/'
-      }
+        uri: "https://covid19-graphql.now.sh/",
+      },
     },
     `gatsby-plugin-sass`,
     `gatsby-theme-material-ui`,

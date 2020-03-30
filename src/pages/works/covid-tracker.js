@@ -5,7 +5,9 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import CovidAffectedCountries from "../../components/works/covid-tracker/Covid.AffectedCountries"
 import CovidCardType1 from "../../components/works/covid-tracker/Covid.CardType1"
+import CovidDistributionByCountry from "../../components/works/covid-tracker/Covid.DistributionByCountry"
 import CovidMap from "../../components/works/covid-tracker/Covid.Map"
+import CovidTimeline from "../../components/works/covid-tracker/Covid.Timeline"
 
 export default () => {
   return (
@@ -30,11 +32,11 @@ export default () => {
         <Grid item lg={8} md={12} sm={12} xs={12}>
           <CovidMap />
         </Grid>
-        <Grid item lg={4} md={12} sm={12} xs={12}>
-          Infection Distribution By country
+        <Grid item lg={4} md={4} sm={12} xs={12}>
+          <CovidDistributionByCountry />
         </Grid>
-        <Grid item lg={8} md={12} sm={12} xs={12}>
-          Infections History
+        <Grid item lg={8} md={8} sm={12} xs={12}>
+          <CovidTimeline />
         </Grid>
       </Grid>
     </Layout>
