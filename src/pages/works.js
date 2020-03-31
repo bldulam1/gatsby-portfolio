@@ -54,6 +54,13 @@ export default () => {
           It stores the states of components in the browser's localStorage.`}
         />
         <WorksCard
+          image={require("../images/covid.jpg")}
+          link="/works/covid-tracker"
+          title="Covid Tracker"
+          description={`This is a Covid-19 Virus Tracker. It uses an Apollo Client to fetch data from this GraphQL API endpoint: https://covid19-graphql.now.sh/.
+          The accuracy of this application is dependent from its source API. The chart libary used here is from recharts.`}
+        />
+        <WorksCard
           disabled={true}
           image={require("../images/trading.jpg")}
           link="/works/tradingsimulator"
