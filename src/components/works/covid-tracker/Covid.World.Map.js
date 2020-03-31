@@ -2,7 +2,6 @@ import React from "react"
 
 import { getGeometry } from "./assets/countries"
 import CovidMap from "./Covid.Map"
-// import "./theme/heatmap.css"
 
 export default props => {
   const { countries } = props

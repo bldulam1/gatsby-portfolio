@@ -10,6 +10,8 @@ import CovidCardType1 from "../../components/works/covid-tracker/Covid.CardType1
 import CovidDistributionByCountry from "../../components/works/covid-tracker/Covid.DistributionByCountry"
 import CovidInfectionHistory from "../../components/works/covid-tracker/Covid.InfectionHistory"
 import CovidWorldMap from "../../components/works/covid-tracker/Covid.World.Map"
+import Typography from "@material-ui/core/Typography"
+import Link from "@material-ui/core/Link"
 
 const client = new ApolloClient({
   uri: "https://covid19-graphql.now.sh/",
@@ -81,6 +83,25 @@ export default () => {
     <Layout>
       <SEO title="Covid Tracker" />
       <CountriesContext.Provider value={{ state, setState }}>
+        <Typography variant="h6" color="primary">
+          COVID 19 Virus Situation Tracker
+        </Typography>
+        <Typography variant="subtitle2">
+          The data of this application is hosted at{" "}
+          <span>
+            <Link
+              href="https://covid19-graphql.now.sh/"
+              rel="noopener noreferrer"
+              target="_blank"
+              underline={"none"}
+              variantMapping="span"
+              color="textSecondary"
+            >
+              https://covid19-graphql.now.sh/
+            </Link>
+          </span>
+        </Typography>
+
         <Grid container spacing={2}>
           <Grid item lg={4} md={4} sm={6} xs={12}>
             <CovidCardType1

@@ -20,6 +20,10 @@ export default () => {
     recovered.push({ name, value: mostRecent.recovered })
   })
 
+  infections.sort((a, b) => b.value - a.value)
+  deaths.sort((a, b) => b.value - a.value)
+  recovered.sort((a, b) => b.value - a.value)
+
   return (
     <CovidCardTemplate title="Distribution by Country">
       <Box flexGrow={1}>
