@@ -8,8 +8,8 @@ import { CountriesContext } from "../../components/works/covid-tracker/context/C
 import CovidAffectedCountries from "../../components/works/covid-tracker/Covid.AffectedCountries"
 import CovidCardType1 from "../../components/works/covid-tracker/Covid.CardType1"
 import CovidDistributionByCountry from "../../components/works/covid-tracker/Covid.DistributionByCountry"
+import CovidInfectionHistory from "../../components/works/covid-tracker/Covid.InfectionHistory"
 import CovidMap from "../../components/works/covid-tracker/Covid.Map"
-import CovidTimeline from "../../components/works/covid-tracker/Covid.Timeline"
 
 const client = new ApolloClient({
   uri: "https://covid19-graphql.now.sh/",
@@ -120,7 +120,7 @@ export default () => {
             <CovidDistributionByCountry />
           </Grid>
           <Grid item lg={8} md={8} sm={12} xs={12}>
-            <CovidTimeline />
+            <CovidInfectionHistory />
           </Grid>
         </Grid>
       </CountriesContext.Provider>

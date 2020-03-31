@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react"
-import { Cell, Pie, PieChart, ResponsiveContainer, Sector, Tooltip } from "recharts"
+import { Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts"
 
 import { colors } from "../theme/Covid.Colors"
 
@@ -13,7 +13,7 @@ export default class ChartsPie extends PureComponent {
   props = {
     recovered: [],
     infections: [],
-    deaths: []
+    deaths: [],
   }
 
   render() {

@@ -1,6 +1,5 @@
 import Box from "@material-ui/core/Box"
 import React from "react"
-import { useContext } from "react"
 
 import ChartsPie from "./charts/Charts.Pie"
 import { CountriesContext } from "./context/Covid.Context"
@@ -8,30 +7,11 @@ import CovidCardTemplate from "./Covid.Card.Template"
 
 export default () => {
   const { countries } = React.useContext(CountriesContext).state
-
-  const infections = [
-    // { name: "Group A", value: 400 },
-    // { name: "Group B", value: 300 },
-    // { name: "Group C", value: 300 },
-    // { name: "Group D", value: 200 },
-  ]
-  const deaths = [
-    // { name: "US", value: 100 },
-    // { name: "Italy", value: 300 },
-    // { name: "B1", value: 100 },
-    // { name: "B2", value: 80 },
-    // { name: "B3", value: 40 },
-    // { name: "B4", value: 30 },
-    // { name: "B5", value: 50 },
-    // { name: "C1", value: 100 },
-    // { name: "C2", value: 200 },
-    // { name: "D1", value: 150 },
-    // { name: "D2", value: 50 },
-  ]
-
+  const infections = []
+  const deaths = []
   const recovered = []
+
   countries.forEach(({ name, mostRecent }) => {
-    console.log({ name, mostRecent })
     infections.push({
       name,
       value: mostRecent.confirmed,
@@ -43,7 +23,11 @@ export default () => {
   return (
     <CovidCardTemplate title="Distribution by Country">
       <Box flexGrow={1}>
-        <ChartsPie infections={infections} recovered={recovered} deaths={deaths} />
+        <ChartsPie
+          infections={infections}
+          recovered={recovered}
+          deaths={deaths}
+        />
       </Box>
     </CovidCardTemplate>
   )
