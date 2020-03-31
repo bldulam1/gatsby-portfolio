@@ -1,4 +1,6 @@
 import React, { PureComponent } from "react"
+import Box from "@material-ui/core/Box"
+import { FormControlLabel, Checkbox, Slider, Tooltip } from "@material-ui/core"
 
 export default class CovidMapControlPanel extends PureComponent {
   render() {
@@ -13,9 +15,7 @@ export default class CovidMapControlPanel extends PureComponent {
     const day = 24 * 60 * 60 * 1000
     const days = Math.round((endTime - startTime) / day)
 
-    const _onChangeDay = evt => {
-      const daysToAdd = evt.target.value
-      // add selected days to start time to calculate new time
+    const _onChangeDay = (_, daysToAdd) => {
       const newTime = startTime + daysToAdd * day
       onChangeDay(newTime)
     }
@@ -26,28 +26,33 @@ export default class CovidMapControlPanel extends PureComponent {
     }
 
     return (
-      <div className="control-panel">
-        <div className="input">
-          <label>All Days</label>
-          <input
-            type="checkbox"
-            name="allday"
-            checked={allDay}
-            onChange={evt => onChangeAllDay(evt.target.checked)}
-          />
-        </div>
-        <div className={`input ${allDay ? "disabled" : ""}`}>
-          <label>Each Day: {formatTime(selectedTime)}</label>
-          <input
-            type="range"
+      <Box display="flex" flexDirection="row" >
+        <Box display="flex" flexDirection="center" justifyContent="center">
+          <Tooltip title="All Days">
+            <Checkbox
+              checked={allDay}
+              onChange={evt => onChangeAllDay(evt.target.checked)}
+              name="allDay"
+              color="primary"
+            />
+          </Tooltip>
+        </Box>
+        <Box
+          display="flex"
+          flexDirection="center"
+          justifyContent="center"
+          flexGrow={1}
+          margin="auto"
+        >
+          <Slider
             disabled={allDay}
             min={1}
             max={days}
             step={1}
             onChange={_onChangeDay}
           />
-        </div>
-      </div>
+        </Box>
+      </Box>
     )
   }
 }

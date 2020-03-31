@@ -32,7 +32,7 @@ export default class CovidMap extends React.Component {
       viewport: {
         latitude: 40,
         longitude: -100,
-        zoom: 14,
+        zoom: 1,
         bearing: 0,
         pitch: 0,
       },
@@ -41,31 +41,33 @@ export default class CovidMap extends React.Component {
       endTime: current,
       selectedTime: current,
       earthquakes: null,
+      initialized: false,
     }
-
     this._handleChangeDay = this._handleChangeDay.bind(this)
     this._handleChangeAllDay = this._handleChangeAllDay.bind(this)
   }
 
-  componentDidMount() {
-    requestJson(
-      "https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson",
-      (error, response) => {
-        if (!error) {
-          const features = response.features
-          const endTime = features[0].properties.time
-          const startTime = features[features.length - 1].properties.time
+  componentDidMount() {}
 
-          this.setState({
-            data: response,
-            earthquakes: response,
-            endTime,
-            startTime,
-            selectedTime: endTime,
-          })
-        }
+  componentDidUpdate() {
+    const { features } = this.props
+
+    if (!this.state.initialized && features.length) {
+      const startTime = features[0].properties.time
+      const endTime = features[features.length - 1].properties.time
+      const response = {
+        type: "FeatureCollection",
+        features: this.props.features,
       }
-    )
+      this.setState({
+        data: response,
+        earthquakes: response,
+        startTime,
+        endTime,
+        selectedTime: endTime,
+        initialized: true,
+      })
+    }
   }
 
   _onViewportChange = viewport => this.setState({ viewport })
@@ -101,10 +103,9 @@ export default class CovidMap extends React.Component {
       endTime,
     } = this.state
 
-    console.log(data)
     return (
       <CovidCardTemplate title="Worldwide Infections">
-        <Box display="flex" flexGrow={1} height="40vh">
+        <Box display="flex" flexGrow={1} flexDirection="column" height="50vh">
           <MapGL
             {...viewport}
             width="100%"
@@ -119,7 +120,7 @@ export default class CovidMap extends React.Component {
               </Source>
             )}
           </MapGL>
-          {/* <CovidMapControlPanel
+          <CovidMapControlPanel
             containerComponent={this.props.containerComponent}
             startTime={startTime}
             endTime={endTime}
@@ -127,7 +128,7 @@ export default class CovidMap extends React.Component {
             allDay={allDay}
             onChangeDay={this._handleChangeDay}
             onChangeAllDay={this._handleChangeAllDay}
-          /> */}
+          />
         </Box>
       </CovidCardTemplate>
     )

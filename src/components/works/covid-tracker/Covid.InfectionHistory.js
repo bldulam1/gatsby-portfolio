@@ -7,8 +7,8 @@ import CovidCardTemplate from "./Covid.Card.Template"
 import { colors } from "./theme/Covid.Colors"
 
 class LineChartHistory extends PureComponent {
-  props = {
-    data: [],
+  constructor(props){
+    super(props)
   }
   render() {
     const { data } = this.props

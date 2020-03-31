@@ -4,16 +4,13 @@ import { Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts"
 import { colors } from "../theme/Covid.Colors"
 
 export default class ChartsPie extends PureComponent {
-  state = {
-    height: 300,
-    endAngle: 90,
-    startAngle: 90 + 360,
-  }
-
-  props = {
-    recovered: [],
-    infections: [],
-    deaths: [],
+  constructor(props) {
+    super(props)
+    this.state = {
+      height: 300,
+      endAngle: 90,
+      startAngle: 90 + 360,
+    }
   }
 
   render() {

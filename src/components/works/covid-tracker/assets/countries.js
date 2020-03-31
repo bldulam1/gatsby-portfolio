@@ -268,3 +268,50 @@ export const countries = {
   Zambia: { code: "ZM", lat: -13.133897, lon: 27.849332 },
   Zimbabwe: { code: "ZW", lat: -19.015438, lon: 29.154857 },
 }
+
+export const aliases = {
+  "Cabo Verde": "Cape Verde",
+  "Congo (Brazzaville)": "Congo [Republic]",
+  "Congo (Kinshasa)": "Congo [DRC]",
+  "Cote d'Ivoire": "Côte d'Ivoire",
+  Czechia: "Czech Republic",
+  Eswatini: "Swaziland",
+  Burma: "Myanmar [Burma]",
+  "Holy See": "Vatican City",
+  "Korea, South": "South Korea",
+  "North Macedonia": "Macedonia [FYROM]",
+  "Taiwan*": "Taiwan",
+  US: "United States",
+  "West Bank and Gaza": "Palestinian Territories",
+}
+
+export const getGoogleCountryName = name => {
+  if (aliases[name]) {
+    return aliases[name]
+  }
+  return name
+}
+
+export const getCountryCode = name => {
+  if (countries[name] && countries[name].code) {
+    return countries[name].code
+  } else if (aliases[name]) {
+    return getCountryCode(aliases[name])
+  }
+
+  return null
+}
+
+export const getGeometry = name => {
+  if (countries[name] && countries[name].code) {
+    const { lat, lon } = countries[name]
+    return {
+      type: "Point",
+      coordinates: [lon, lat, 0],
+    }
+  } else if (aliases[name]) {
+    return getGeometry(aliases[name])
+  }
+
+  return null
+}

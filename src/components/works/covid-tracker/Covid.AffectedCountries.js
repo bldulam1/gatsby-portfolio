@@ -10,7 +10,7 @@ import { useEffect } from "react"
 import ReactCountryFlag from "react-country-flag"
 import { areEqual, FixedSizeList } from "react-window"
 
-import { countries } from "./assets/countries"
+import { getCountryCode, getGoogleCountryName } from "./assets/countries"
 import { CountriesContext } from "./context/Covid.Context"
 import CovidCardTemplate from "./Covid.Card.Template"
 
@@ -91,7 +91,7 @@ export default () => {
           </Grid>
           <Grid item lg={12} md={12} sm={12} xs={12}>
             <FixedSizeList
-              height={300}
+              height={400}
               itemSize={46}
               itemCount={state.filteredCountries.length}
               itemData={state.filteredCountries}
@@ -108,12 +108,15 @@ export default () => {
 const Row = React.memo(props => {
   const { index, style, data } = props
   const country = data[index]
+  const countryCode = getCountryCode(country.name)
+  const countryName = getGoogleCountryName(country.name)
+
   return (
     <ListItem button style={style} key={index}>
       <ListItemIcon>
-        {country.name && countries[country.name] ? (
+        {countryCode ? (
           <ReactCountryFlag
-            countryCode={countries[country.name].code}
+            countryCode={countryCode}
             svg
             style={{
               width: "2em",
@@ -121,7 +124,12 @@ const Row = React.memo(props => {
             }}
           />
         ) : (
-          <div>{country.name[0]}</div>
+          <div>
+            {countryName
+              .split(" ")
+              .map(s => s[0])
+              .join("")}
+          </div>
         )}
       </ListItemIcon>
       <ListItemText
