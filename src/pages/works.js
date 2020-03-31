@@ -56,7 +56,7 @@ export default () => {
         <WorksCard
           image={require("../images/covid.jpg")}
           link="/works/covid-tracker"
-          title="Covid Tracker"
+          title="Covid 19 Tracker"
           description={`This is a Covid-19 Virus Tracker. It uses an Apollo Client to fetch data from this GraphQL API endpoint: https://covid19-graphql.now.sh/.
           The accuracy of this application is dependent from its source API. The chart libary used here is from recharts.`}
         />

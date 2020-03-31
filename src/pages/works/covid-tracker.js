@@ -4,7 +4,7 @@ import React from "react"
 
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import CovidContext from "../../components/works/covid-tracker/context/Covid.Context"
+import { CountriesContext } from "../../components/works/covid-tracker/context/Covid.Context"
 import CovidAffectedCountries from "../../components/works/covid-tracker/Covid.AffectedCountries"
 import CovidCardType1 from "../../components/works/covid-tracker/Covid.CardType1"
 import CovidDistributionByCountry from "../../components/works/covid-tracker/Covid.DistributionByCountry"
@@ -16,7 +16,6 @@ const client = new ApolloClient({
 })
 
 export default () => {
-  const { Provider } = CovidContext
   const [state, setState] = React.useState({
     confirmed: { total: 0, latest: 0 },
     deaths: { total: 0, latest: 0 },
@@ -81,7 +80,7 @@ export default () => {
   return (
     <Layout>
       <SEO title="Covid Tracker" />
-      <Provider value={{ state, setState }}>
+      <CountriesContext.Provider value={{ state, setState }}>
         <Grid container spacing={2}>
           <Grid item lg={3} md={6} sm={6} xs={12}>
             <CovidCardType1
@@ -124,7 +123,7 @@ export default () => {
             <CovidTimeline />
           </Grid>
         </Grid>
-      </Provider>
+      </CountriesContext.Provider>
     </Layout>
   )
 }

@@ -11,11 +11,11 @@ import ReactCountryFlag from "react-country-flag"
 import { areEqual, FixedSizeList } from "react-window"
 
 import { countries } from "./assets/countries"
-import CovidContext from "./context/Covid.Context"
+import { CountriesContext } from "./context/Covid.Context"
 import CovidCardTemplate from "./Covid.Card.Template"
 
 export default () => {
-  const { countries } = React.useContext(CovidContext).state
+  const { countries } = React.useContext(CountriesContext).state
   const sortOptions = [
     "Cases(total)",
     "Cases(latest)",
