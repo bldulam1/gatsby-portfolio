@@ -16211,6 +16211,11 @@ react-copy-to-clipboard@^5.0.1:
     copy-to-clipboard "^3"
     prop-types "^15.5.8"
 
+react-country-flag@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-country-flag/-/react-country-flag-2.0.1.tgz#1028e71cd456b9685adc0447e148b79770c04b4e"
+  integrity sha512-cZQp+MTQUfSkI++ypDJU6PNgNU2K6Z/9htO4ct4HzvWAs19DoMbnvhzyK31lkBnW1vfx9OkMwskxuaYbEcFjLw==
+
 react-dev-utils@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-4.2.3.tgz#5b42d9ea58d5e9e017a2f57a40a8af408a3a46fb"

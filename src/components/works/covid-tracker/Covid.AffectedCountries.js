@@ -1,3 +1,4 @@
+import { ListItemIcon } from "@material-ui/core"
 import Grid from "@material-ui/core/Grid"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction"
@@ -6,8 +7,10 @@ import MenuItem from "@material-ui/core/MenuItem"
 import TextField from "@material-ui/core/TextField"
 import React from "react"
 import { useEffect } from "react"
-import { FixedSizeList } from "react-window"
+import ReactCountryFlag from "react-country-flag"
+import { areEqual, FixedSizeList } from "react-window"
 
+import { countries } from "./assets/countries"
 import CovidContext from "./context/Covid.Context"
 import CovidCardTemplate from "./Covid.Card.Template"
 
@@ -42,11 +45,23 @@ export default () => {
   }
 
   const handleSortOptionChange = event => {
-    setState({ ...state, selectedSort: event.target.value })
+    const selectedSort = event.target.value
+    let filteredCountries = state.filteredCountries
+    filteredCountries.sort((a, b) => {
+      if (selectedSort === sortOptions[0]) {
+        return b.mostRecent.confirmed - a.mostRecent.confirmed
+      } else if (selectedSort === sortOptions[2]) {
+        return b.mostRecent.deaths - a.mostRecent.deaths
+      }
+      return b.mostRecent.confirmed - a.mostRecent.confirmed
+    })
+    setState({ ...state, selectedSort, filteredCountries })
   }
 
   return (
-    <CovidCardTemplate title="Affected Countries">
+    <CovidCardTemplate
+      title={`Affected Countries (${state.filteredCountries.length})`}
+    >
       <form autoComplete="off">
         <Grid container spacing={2}>
           <Grid item lg={8} md={6} sm={6} xs={12}>
@@ -90,14 +105,29 @@ export default () => {
   )
 }
 
-function Row(props) {
+const Row = React.memo(props => {
   const { index, style, data } = props
+  const country = data[index]
   return (
     <ListItem button style={style} key={index}>
+      <ListItemIcon>
+        {country.name && countries[country.name] ? (
+          <ReactCountryFlag
+            countryCode={countries[country.name].code}
+            svg
+            style={{
+              width: "2em",
+              height: "2em",
+            }}
+          />
+        ) : (
+          <div>{country.name[0]}</div>
+        )}
+      </ListItemIcon>
       <ListItemText
-        primary={data[index].name || ""}
-        secondary={`${data[index].mostRecent.confirmed} cases | ${data[index].mostRecent.deaths} deaths`}
+        primary={country.name || ""}
+        secondary={`${country.mostRecent.confirmed} cases | ${country.mostRecent.deaths} deaths`}
       />
     </ListItem>
   )
-}
+}, areEqual)
