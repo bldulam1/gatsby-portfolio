@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react"
-import { Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts"
+import { Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts"
 
 import { colors } from "../theme/Covid.Colors"
 

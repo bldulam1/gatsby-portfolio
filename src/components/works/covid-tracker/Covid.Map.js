@@ -32,7 +32,7 @@ export default class CovidMap extends React.Component {
       viewport: {
         latitude: 40,
         longitude: -100,
-        zoom: 3,
+        zoom: 14,
         bearing: 0,
         pitch: 0,
       },
@@ -100,6 +100,8 @@ export default class CovidMap extends React.Component {
       startTime,
       endTime,
     } = this.state
+
+    console.log(data)
     return (
       <CovidCardTemplate title="Worldwide Infections">
         <Box display="flex" flexGrow={1} height="40vh">
@@ -117,7 +119,7 @@ export default class CovidMap extends React.Component {
               </Source>
             )}
           </MapGL>
-          <CovidMapControlPanel
+          {/* <CovidMapControlPanel
             containerComponent={this.props.containerComponent}
             startTime={startTime}
             endTime={endTime}
@@ -125,10 +127,7 @@ export default class CovidMap extends React.Component {
             allDay={allDay}
             onChangeDay={this._handleChangeDay}
             onChangeAllDay={this._handleChangeAllDay}
-          />
-          {/* <div style={{ height: "100%", width:"100%", position: "relative" }}>
-
-          </div> */}
+          /> */}
         </Box>
       </CovidCardTemplate>
     )
