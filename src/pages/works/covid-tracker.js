@@ -82,34 +82,34 @@ export default () => {
       <SEO title="Covid Tracker" />
       <CountriesContext.Provider value={{ state, setState }}>
         <Grid container spacing={2}>
-          <Grid item lg={3} md={6} sm={6} xs={12}>
+          <Grid item lg={4} md={4} sm={6} xs={12}>
             <CovidCardType1
               title="Infections"
               total={state.confirmed.total}
               latest={state.confirmed.latest}
             />
           </Grid>
-          <Grid item lg={3} md={6} sm={6} xs={12}>
+          <Grid item lg={4} md={4} sm={6} xs={12}>
             <CovidCardType1
               title="Deaths"
               total={state.deaths.total}
               latest={state.deaths.latest}
             />
           </Grid>
-          <Grid item lg={3} md={6} sm={6} xs={12}>
+          <Grid item lg={4} md={4} sm={6} xs={12}>
             <CovidCardType1
               title="Recoveries"
               total={state.recovered.total}
               latest={state.recovered.latest}
             />
           </Grid>
-          <Grid item lg={3} md={6} sm={6} xs={12}>
+          {/* <Grid item lg={3} md={6} sm={6} xs={12}>
             <CovidCardType1
               title="Critical"
               total={state.critical.total}
               latest={state.critical.latest}
             />
-          </Grid>
+          </Grid> */}
           <Grid item lg={4} md={12} sm={12} xs={12}>
             <CovidAffectedCountries />
           </Grid>
