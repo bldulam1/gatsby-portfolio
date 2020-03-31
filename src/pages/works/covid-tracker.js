@@ -24,6 +24,7 @@ export default () => {
     recovered: { total: 0, latest: 0 },
     critical: { total: 0, latest: 0 },
     countries: [],
+    lastUpdate: null,
   })
 
   React.useEffect(() => {
@@ -55,6 +56,7 @@ export default () => {
           let confirmed = { latest: 0, total: 0 }
           let deaths = { latest: 0, total: 0 }
           let recovered = { latest: 0, total: 0 }
+          let lastUpdate = null
 
           countries.forEach(country => {
             const rLen = country.results.length
@@ -67,6 +69,10 @@ export default () => {
             recovered.latest += last1.recovered - last2.recovered
             deaths.total += country.mostRecent.deaths
             deaths.latest += last1.deaths - last2.deaths
+
+            if (!lastUpdate) {
+              lastUpdate = new Date(last1.date)
+            }
           })
 
           setState({
@@ -75,9 +81,13 @@ export default () => {
             deaths,
             recovered,
             countries,
+            lastUpdate,
           })
         })
   }, [state])
+
+  const formattedDate = date =>
+    `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}`
 
   return (
     <Layout>
@@ -86,8 +96,8 @@ export default () => {
         <Typography variant="h6" color="primary">
           COVID 19 Virus Situation Tracker
         </Typography>
-        <Typography variant="subtitle2">
-          The data of this application is hosted at{" "}
+        <Typography variant="body2">
+          The dataset of this application is hosted at{" "}
           <span>
             <Link
               href="https://covid19-graphql.now.sh/"
@@ -101,7 +111,11 @@ export default () => {
             </Link>
           </span>
         </Typography>
-
+        {state.lastUpdate && (
+          <Typography variant="caption" color="textSecondary" gutterBottom>
+            Last Updated: {formattedDate(state.lastUpdate)}
+          </Typography>
+        )}
         <Grid container spacing={2}>
           <Grid item lg={4} md={4} sm={6} xs={12}>
             <CovidCardType1
