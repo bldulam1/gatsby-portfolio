@@ -9,6 +9,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { isMobile } from "react-device-detect"
+import Helmet from "react-helmet"
 
 import fonts from "../gatsby-theme-material-ui-top-layout/fonts"
 import theme from "../gatsby-theme-material-ui-top-layout/theme"
@@ -40,6 +41,8 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          siteUrl
+          email
         }
       }
     }
@@ -47,9 +50,17 @@ const Layout = ({ children }) => {
   const email = "brendondulam06@gmail.com"
 
   const classes = useStyles()
+  console.log(data)
 
   return (
     <ThemeProvider theme={theme}>
+      <Helmet title={data.site.siteMetadata.title}>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:image"
+          content="https://startbootstrap.com/assets/img/screenshots/themes/stylish-portfolio.png"
+        />
+      </Helmet>
       <CssBaseline />
       <Box
         display="flex"

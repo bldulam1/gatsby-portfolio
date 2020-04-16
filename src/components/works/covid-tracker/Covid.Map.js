@@ -1,5 +1,4 @@
 import Box from "@material-ui/core/Box"
-import { json as requestJson } from "d3-request"
 import React from "react"
 import MapGL, { Layer, Source } from "react-map-gl"
 
