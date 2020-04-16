@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Brendon`,
     siteUrl: "https://bdulam.netlify.app",
-    description: `This is my web portfolio.`,
+    description: `This is my web portfolio, containing some of my side projects and work experience.`,
     email: "brendondulam06@gmail.com",
     author: `Brendon Dulam`,
   },
