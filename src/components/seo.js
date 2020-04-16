@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby"
+import path from "path"
 import PropTypes from "prop-types"
 /**
  * SEO component that queries for data with
@@ -27,7 +28,7 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const thumbnail = `${site.siteMetadata.siteUrl}${require("../images/lidarviewer.jpg")}`
+  const thumbnail = path.join(site.siteMetadata.siteUrl, "thumbnail.png")
 
   // console.log(metaDescription)
 
@@ -52,6 +53,14 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
+          name: `og:image`,
+          content: thumbnail,
+        },
+        {
+          name: `og:url`,
+          content: site.siteMetadata.siteUrl,
+        },
+        {
           property: `og:type`,
           content: `website`,
         },
@@ -68,11 +77,7 @@ function SEO({ description, lang, meta, title }) {
           content: title,
         },
         {
-          name: `twitter:image:src`,
-          content: thumbnail,
-        },
-        {
-          name: `og:image`,
+          name: `twitter:image`,
           content: thumbnail,
         },
         {
