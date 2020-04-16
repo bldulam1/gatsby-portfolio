@@ -36,7 +36,7 @@ export default class ChartComponent extends React.Component {
     }
 
     getData().then(data => {
-      console.log(data.length)
+      // console.log(data.length)
       this.setState({ data })
     })
   }

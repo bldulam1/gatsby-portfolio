@@ -115,7 +115,6 @@ export default class ControlPanel extends PureComponent {
           <div id="help-btn">
             {HelpPanel.renderButton({
               isOpen: isHelpOpen,
-              onClick: () => console.log("Hello"),
             })}
           </div>
           <div id="tabs">
