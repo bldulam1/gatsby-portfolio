@@ -11,7 +11,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import Helmet from "react-helmet"
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, image }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -28,7 +28,9 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const thumbnail = `${site.siteMetadata.siteUrl}/thumbnail.png`
+  const thumbnail = path
+    .join(site.siteMetadata.siteUrl, image)
+    .replace("https:/", "https://")
 
   // console.log(metaDescription)
 
@@ -97,6 +99,7 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
+  image: "thumbnail.png",
 }
 
 SEO.propTypes = {

@@ -2,6 +2,7 @@ import Typography from "@material-ui/core/Typography"
 import React from "react"
 
 import ColorTool from "../../components/works/color-tool/ColorTool"
+import SEO from "../../components/seo"
 
 export default () => {
   const isSSR = typeof window === "undefined"
@@ -16,6 +17,10 @@ export default () => {
             </Typography>
           }
         >
+          <SEO
+            title="Color Tool"
+            image={require("../../images/react.colors.jpg")}
+          />
           <ColorTool />
         </React.Suspense>
       )}

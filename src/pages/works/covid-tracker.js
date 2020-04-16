@@ -91,7 +91,7 @@ export default () => {
 
   return (
     <Layout>
-      <SEO title="Covid Tracker" />
+      <SEO title="Covid Tracker" description="This is my COVID 19 Virus spread tracker. It fetches data from https://covid19-graphql.now.sh" image={require("../../images/covid.jpg")} />
       <CountriesContext.Provider value={{ state, setState }}>
         <Typography variant="h6" color="primary">
           COVID 19 Virus Situation Tracker
