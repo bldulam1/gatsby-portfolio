@@ -19,6 +19,7 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            siteUrl
           }
         }
       }
@@ -67,7 +68,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:image`,
-          content: require("../images/lidarviewer.jpg"),
+          content: `${site.siteMetadata.siteUrl}/${require("../images/lidarviewer.jpg")}`,
         },
         {
           name: `twitter:description`,
