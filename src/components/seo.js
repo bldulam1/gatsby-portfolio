@@ -28,7 +28,7 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const thumbnail = path.join(site.siteMetadata.siteUrl, "thumbnail.png")
+  const thumbnail = `${site.siteMetadata.siteUrl}/thumbnail.png`
 
   // console.log(metaDescription)
 
