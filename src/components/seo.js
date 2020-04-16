@@ -66,6 +66,10 @@ function SEO({ description, lang, meta, title }) {
           content: title,
         },
         {
+          name: `twitter:image`,
+          content: require('../images/lidarviewer.jpg'),
+        },
+        {
           name: `twitter:description`,
           content: metaDescription,
         },
