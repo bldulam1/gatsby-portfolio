@@ -190,7 +190,11 @@ export default () => {
 
   return (
     <Layout>
-      <SEO title="Path Finding" description="Visualization of the A star path finding algorithm" image={require("../../images/maze.jpg")} />
+      <SEO
+        title="Path Finding"
+        description="Visualization of the A star path finding algorithm"
+        image={require("../../images/maze.jpg")}
+      />
       <Box
         width="100%"
         height="85vh"
