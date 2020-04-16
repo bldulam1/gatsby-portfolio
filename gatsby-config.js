@@ -7,15 +7,15 @@ module.exports = {
     author: `Brendon Dulam`,
   },
   plugins: [
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          `gatsby-remark-social-cards`,
-          // ...
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-transformer-remark`,
+    //   options: {
+    //     plugins: [
+    //       `gatsby-remark-social-cards`,
+    //       // ...
+    //     ],
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-apollo",
       options: {
@@ -38,6 +38,7 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+        plugins: [`gatsby-remark-social-cards`],
       },
     },
     `gatsby-transformer-sharp`,
