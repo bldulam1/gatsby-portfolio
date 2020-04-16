@@ -20,7 +20,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Brendon" />
       <Box
         maxWidth="50rem"
         display="flex"

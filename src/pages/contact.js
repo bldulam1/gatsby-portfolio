@@ -41,7 +41,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Contact" />
       <Box
         display="flex"
         flexDirection="column"
