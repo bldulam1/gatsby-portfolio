@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react"
 import Box from "@material-ui/core/Box"
-import { FormControlLabel, Checkbox, Slider, Tooltip } from "@material-ui/core"
+import { Checkbox, Slider, Tooltip } from "@material-ui/core"
 
 export default class CovidMapControlPanel extends PureComponent {
   render() {
@@ -10,7 +10,7 @@ export default class CovidMapControlPanel extends PureComponent {
       onChangeDay,
       allDay,
       onChangeAllDay,
-      selectedTime,
+      // selectedTime,
     } = this.props
     const day = 24 * 60 * 60 * 1000
     const days = Math.round((endTime - startTime) / day)
@@ -20,13 +20,13 @@ export default class CovidMapControlPanel extends PureComponent {
       onChangeDay(newTime)
     }
 
-    const formatTime = time => {
-      const date = new Date(time)
-      return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`
-    }
+    // const formatTime = time => {
+    //   const date = new Date(time)
+    //   return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`
+    // }
 
     return (
-      <Box display="flex" flexDirection="row" >
+      <Box display="flex" flexDirection="row">
         <Box display="flex" flexDirection="center" justifyContent="center">
           <Tooltip title="All Days">
             <Checkbox

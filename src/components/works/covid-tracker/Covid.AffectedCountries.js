@@ -1,12 +1,10 @@
 import { ListItemIcon } from "@material-ui/core"
 import Grid from "@material-ui/core/Grid"
 import ListItem from "@material-ui/core/ListItem"
-import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction"
 import ListItemText from "@material-ui/core/ListItemText"
 import MenuItem from "@material-ui/core/MenuItem"
 import TextField from "@material-ui/core/TextField"
 import React from "react"
-import { useEffect } from "react"
 import ReactCountryFlag from "react-country-flag"
 import { areEqual, FixedSizeList } from "react-window"
 

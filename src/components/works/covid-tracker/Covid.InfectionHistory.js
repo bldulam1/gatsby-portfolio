@@ -1,15 +1,21 @@
 import Box from "@material-ui/core/Box"
 import React, { PureComponent } from "react"
-import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
+import {
+  CartesianGrid,
+  Legend,
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts"
 
 import { CountriesContext } from "./context/Covid.Context"
 import CovidCardTemplate from "./Covid.Card.Template"
 import { colors } from "./theme/Covid.Colors"
 
 class LineChartHistory extends PureComponent {
-  constructor(props){
-    super(props)
-  }
   render() {
     const { data } = this.props
     const strokeWidth = 2
